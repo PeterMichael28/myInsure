@@ -14,7 +14,7 @@ const Started = () => {
                 </div>
                 <div className='con2'>
                     <Button
-                        text='Get-Started'
+                        text='GET-STARTED'
                         location='/myInsure/signup'
                     />
                     <a href="#/" className='google-link'>

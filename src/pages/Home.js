@@ -6,7 +6,7 @@ import '../css/Home.css'
 
 const Home = () => {
     return ( 
-        <div className="contain">
+        <div id='home' className="contain">
         <div className="home d-flex flex-column">
             <img src={Logo} alt="logo" className='' />
             <Button 

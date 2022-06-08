@@ -14,7 +14,8 @@
 
 .contain {
     position: relative;
-    max-width: 400px;
+    width: 100%;
+    max-width: 450px;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -93,7 +94,7 @@ label {
     letter-spacing: 1px; 
 }
 .con3 a {
-    color: rgb(255, 217, 0);
+    color: orange;
 }
  
 /*password container*/

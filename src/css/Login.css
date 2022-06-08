@@ -3,12 +3,15 @@
 
 .forgot-pass {
     font-size: 1rem;
-    color: gold;
+    color: orange;
     margin: 3rem auto 2rem;
 }
 .new-member {
     font-size: .8rem;
     letter-spacing: 1px;
+}
+.new-member a {
+    color: orange;
 }
 #togglePassword {
     cursor: pointer;
