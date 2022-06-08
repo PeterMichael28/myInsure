@@ -1,0 +1,112 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+/* .gen-pad {
+    
+} */
+.contain {
+    position: relative;
+    max-width: 400px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 2rem 1.5rem .5rem;
+    overflow: hidden;
+}
+/*General Button Component*/
+.gen-btn {
+    width: 100%;
+    border-radius: 15px;
+    padding: 8px 0;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 1.1px;
+    background-color: #097AE0;
+    color: white;
+}
+
+/*inputs border color*/
+.form-control {
+    border: 1px solid rgb(14, 148, 209);
+    box-shadow: .5px .5px 1px rgb(14, 148, 209),
+                -.5px -.5px 1px rgb(14, 148, 209);
+    outline: none;
+    height: 40px;
+    padding-left: 20px;
+}
+.form-control input {
+    padding-left: 14px;
+}
+::placeholder {
+    font-size: .9rem;
+    letter-spacing: 1px;
+}
+/*Label*/
+label {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+/*back btn*/
+.back {
+    position: absolute;
+    width: 50px;
+    top: 15px;
+    left: 3px;
+    cursor: pointer;
+
+}
+/*title*/
+.login-title {
+    display: block;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px ;
+    margin-bottom: 1rem;
+}
+.login-title h1{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: rgba(0, 0, 0, .7);
+}
+.login-title img {
+    object-fit: contain;
+    width: 180px;
+    height: 27px;
+}
+
+.con3 {
+    font-size: .8rem;
+    font-weight: 300;
+    letter-spacing: 1px; 
+}
+.con3 a {
+    color: rgb(255, 217, 0);
+}
+ 
+/*password container*/
+.pass-con {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+.pass-con input {
+    width: 89%;
+    border: none;
+    outline: none;
+}
+.pass-con span {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
