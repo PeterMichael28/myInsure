@@ -37,9 +37,9 @@ const Login = () => {
                     <a href="#/" className='forgot-pass d-flex justify-content-center'> Forgot Password?</a>
                     <Button
                         text='LOG IN'
-                        location='/'
+                        location='/myInsure'
                     />
-                    <p className='new-member d-flex justify-content-center mt-2'>New Member? <Link to='/signup'> Sign Up</Link></p>
+                    <p className='new-member d-flex justify-content-center mt-2'>New Member? <Link to='/myInsure/signup'> Sign Up</Link></p>
                 </form>
                 <p className='con4 mt-4 mb-1'>
                     By continuing, you indicate that you agree to myInsure's 

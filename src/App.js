@@ -12,10 +12,10 @@ function App() {
   return (
     <Router>
      <Routes>
-       <Route path='/' element={<Home />}></Route>
-       <Route path='/getting-started' element={<Started />}></Route>
-       <Route path='/login' element={<Login />}></Route>
-       <Route path='/signup' element={<Signup />}></Route>
+       <Route path='/myInsure' element={<Home />}></Route>
+       <Route path='/myInsure/getting-started' element={<Started />}></Route>
+       <Route path='/myInsure/login' element={<Login />}></Route>
+       <Route path='/myInsure/signup' element={<Signup />}></Route>
        {/* <Route path='/profile' element={<Profile />}></Route> */}
      </Routes>
     </Router>

@@ -15,7 +15,7 @@ const Started = () => {
                 <div className='con2'>
                     <Button
                         text='Get-Started'
-                        location='/signup'
+                        location='/myInsure/signup'
                     />
                     <a href="#/" className='google-link'>
                         
@@ -24,7 +24,7 @@ const Started = () => {
                     </a>
                 </div>
                 <div className='con3 text-center mt-2'>
-                    <p>Already have an account? <Link to='/login'>LOG IN</Link></p>
+                    <p>Already have an account? <Link to='/myInsure/login'>LOG IN</Link></p>
                 </div>
                 <p className='con4 mt-4'>
                     By continuing, you indicate that you agree to myInsure's 

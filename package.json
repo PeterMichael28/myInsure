@@ -1,7 +1,7 @@
 {
   "name": "myInsure",
-  "version": "0.1.0",
   "homepage": "http://PeterMichael28.github.io/myInsure",
+  "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",

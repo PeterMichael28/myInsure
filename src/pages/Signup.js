@@ -64,10 +64,10 @@ const Signup = () => {
                 </div>
                 <Button
                     text='SIGN UP'
-                    location='/'
+                    location='/myInsure'
                 />
                  <div className='con3 text-center mt-2'>
-                    <p>Already have an account? <Link to='/login'>LOG IN</Link></p>
+                    <p>Already have an account? <Link to='/myInsure/login'>LOG IN</Link></p>
                 </div>
             </form>
         </div>

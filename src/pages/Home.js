@@ -11,7 +11,7 @@ const Home = () => {
             <img src={Logo} alt="logo" className='' />
             <Button 
                 text='Continue' 
-                location='/getting-started'
+                location='/myInsure/getting-started'
                 
             />
         </div>

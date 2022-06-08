@@ -1,3 +1,5 @@
+
+
 *,
 *::before,
 *::after {
@@ -9,6 +11,7 @@
 /* .gen-pad {
     
 } */
+
 .contain {
     position: relative;
     max-width: 400px;
