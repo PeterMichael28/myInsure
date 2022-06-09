@@ -4,6 +4,7 @@ import Logo from '../assets/MyInsureLogo..png'
 import Back from '../components/Back';
 import Button from '../components/Buttons';
 import '../css/Signup.css'
+import '../css/Profile.css'
 
 const Signup = () => {
     const [passDis, setPassDis] = useState(true);
@@ -64,7 +65,7 @@ const Signup = () => {
                 </div>
                 <Button
                     text='SIGN UP'
-                    location='/myInsure'
+                    location='/myInsure/complete-profile'
                 />
                  <div className='con3 text-center mt-2'>
                     <p>Already have an account? <Link to='/myInsure/login'>LOG IN</Link></p>
