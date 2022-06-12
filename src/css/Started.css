@@ -3,6 +3,7 @@
     position: relative;
     color: white;
     padding-bottom: 0px;
+    height: 100vh;
 }
 #started::before {
     content: '';

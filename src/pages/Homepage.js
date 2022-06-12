@@ -15,7 +15,14 @@ const Homepage = () => {
             </div>
             <div className="main d-flex flex-column justify-content-center align-items-center">
                 <div className="bigBox d-flex flex-wrap">
-                    <Box topText='BUY' />
+
+
+                    {/* <div className="d-flex justify-content-center align-items-center"> */}
+                    <Link to='/myInsure/buy' className="d-flex justify-content-center align-items-center text-white box1-link">
+                        <Box topText='BUY' />
+                    </Link>
+                    {/* </div> */}
+                    
                     <div className="box2 d-flex justify-content-center align-items-center">
                         <Link to='/myInsure/claims' className="d-flex justify-content-center align-items-center">
                             <Box topText='MAKE' BotText='A' lastText='CLAIM'/>

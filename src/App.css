@@ -24,7 +24,7 @@ form {
     position: relative;
     width: 100%;
     max-width: 430px;
-    height: 100vh;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -44,7 +44,11 @@ form {
     background-color: #097AE0;
     color: white;
 }
-
+.gradient-btn .gen-btn {
+    background: linear-gradient(234.87deg, #097AE0 -32.31%, #FC814A 118.63%);
+    font-size: 1rem;
+    padding: 10px 12px;
+}
 /*inputs border color*/
 .form-control {
     border: 1px solid rgb(14, 148, 209);

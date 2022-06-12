@@ -1,0 +1,85 @@
+.buy-title {
+    margin: 1.6rem auto;
+}
+.buy-title h3 {
+    font-size: 22px;
+    line-height: 25px;
+    margin: 0;
+    padding: 0; 
+
+}
+
+.phone p {
+    cursor: pointer;
+    padding-bottom: 0;
+}
+.phone p:nth-child(1) {
+    background: linear-gradient(234.87deg, #097AE0 -32.31%, #FC814A 118.63%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    position: relative;
+}
+.phone p:nth-child(1)::after {
+    content: '';
+    position: absolute;
+    width: 75px;
+    height: 1px;
+    background: linear-gradient(234.87deg, #097AE0 -32.31%, #FC814A 118.63%);
+    left: 0;
+    bottom: 4px;
+
+}
+.phone p:nth-child(2) {
+    color: red;
+    position: relative;
+}
+.phone p:nth-child(2)::after {
+    content: '';
+    position: absolute;
+    width: 70px;
+    height: 1px;
+    background:red;
+    left: 0;
+    bottom: 4px;
+
+}
+/*payment plans*/
+.pay-btn {
+    width: 140px;
+    height: 39px;
+    background-color: white;
+    border: 1px solid #097AE0;
+    color: #097AE0;
+    transition: .4s ease all;
+}
+.pay-btn:hover,
+.pay-btn.active {
+    background-color: #097AE0;
+    color: white;
+}
+.pay-details {
+    border: 1px solid #097AE0;
+    padding: 1.3rem 3rem;
+    margin-top: 1rem;
+    border-radius: 15px;
+
+}
+.pay-price h3 {
+    font-size: .9rem;
+}
+.pay-price h3 span {
+    font-size: 3rem;
+}
+.pay-price p {
+    font-size: 1.1rem;
+    margin: 10px auto 30px;
+    letter-spacing: 1px;
+    color: rgba(0, 0, 0, .7);
+}
+.pay-texts {
+    font-size: .95rem;
+    font-weight: normal;
+    color: rgba(0, 0, 0, .7);
+}
