@@ -1,0 +1,119 @@
+.dashboard {
+    width: 100%;
+    background: #F3F3F169;
+}
+a {
+    text-decoration: none;
+}
+.dash-text{
+    color: rgba(0, 0, 0, .5);
+}
+.dash-text h1 {
+    font-weight: 700;
+    line-height: 1.1;
+}
+.dash-text p {
+    font-weight: 600;
+    color: rgba(0, 0, 0, .4);
+}
+.dash {
+    width: 153px;
+    height: 214px;
+    border-radius: 30px;
+    margin: 15px 0;
+    position: relative;
+    padding: 15px 20px ;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.dash h3 {
+    font-weight: 700;
+    font-size: 19px;
+    line-height: .9;
+}
+.dash_pro {
+    background: #097AE0;
+    color: white;
+    justify-content: flex-start;
+    padding-top: 30px;
+}
+.dash_pro .pp {
+   margin-bottom: 1rem;
+   width: 50px;
+}
+.dash_pro .pp-icon {
+    position: absolute;
+    bottom: 15px ;
+    right: 15px;
+    width: 40px;
+
+}
+
+.dash_claim {
+    background: rgba(241, 133, 26, 0.81);
+    color: white;
+}
+
+.dash_claim .claim-icon {
+    position: absolute;
+    bottom: 15px ;
+    right: 15px;
+    width: 40px;
+}
+.dash_buy {
+    background: rgba(9, 122, 224, 0.3);
+    align-items: flex-end;
+    color: #097AE0;
+}
+.dash_buy img,
+.dash_learn img {
+    position: absolute;
+    bottom: 15px ;
+    left: 15px;
+    width: 45px;
+}
+.dash_learn {
+    background: rgba(255, 218, 175, 0.33);
+    color: #FA8701;
+    align-items: flex-end;
+}
+
+.dash_faq, 
+.dash_days {
+    width: 143px;
+    height: 60px;
+    border-radius: 30px;
+}
+.dash_faq {
+    border: 1px solid #097AE0;
+}
+.dash_faq h1 {
+    color: rgba(9, 122, 224, 0.48);
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0;
+    margin-right: 10px;
+}
+.dash_faq img {
+    width:20px;
+}
+.dash_days {
+    border: 1px solid rgba(250, 135, 1, 0.74);
+    padding: 10px;
+}
+.dash_days h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    width:40%;
+    color: rgba(9, 122, 224, 0.48);
+
+}
+.dash_days h1 {
+    width: 50%;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: rgba(250, 135, 1, 0.74);
+}
+
