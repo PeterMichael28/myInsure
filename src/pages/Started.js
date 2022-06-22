@@ -26,11 +26,6 @@ const Started = () => {
                 <div className='con3 text-center mt-2'>
                     <p>Already have an account? <Link to='/myInsure/login'>LOG IN</Link></p>
                 </div>
-                <p className='con4 mt-4'>
-                    By continuing, you indicate that you agree to myInsure's 
-                    <a href="#/"> Terms of Service</a> and
-                    <a href="#/"> Privacy Policy</a>
-                </p>
             </div>
         </div>
      );

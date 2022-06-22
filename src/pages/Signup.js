@@ -5,6 +5,7 @@ import Back from '../components/Back';
 import Button from '../components/Buttons';
 import '../css/Signup.css'
 import '../css/Profile.css'
+import Inputs from '../components/Inputs';
 
 const Signup = () => {
     const [passDis, setPassDis] = useState(true);
@@ -23,18 +24,22 @@ const Signup = () => {
         <Back />
         <div className='Signup'>
             <div className='login-title signup-title'>
-                <h1>Sign Up In to</h1>
+                <h1>Sign Up to</h1>
                 <img src={Logo} alt="logo" />
             </div>
             <form>
-                <div className="mb-2">
-                    <label htmlFor="Email1" className="form-label m-0 mb-1">Email</label>
-                    <input type="email" className="form-control" id="Email1" placeholder='you@example.com' required />
-                </div>
-                <div className="mb-2">
-                    <label htmlFor="Phone" className="form-label m-0 mb-1">Phone number</label>
-                    <input type="tel" className="form-control" id="Phone" placeholder='Phone number' required />
-                </div>
+                <Inputs
+                    labelFor = 'Email'
+                    label = 'Email'
+                    type = 'email'
+                    placeholder = 'you@example.com'
+                />
+                <Inputs
+                    labelFor = 'Phone'
+                    label = 'Phone number'
+                    type = 'tel'
+                    placeholder = 'Phone number'
+                />
                 <div className="mb-2">
                     <label htmlFor="Password" className="form-label m-0 mb-1">Password</label>
                     <div className="form-control pass-con">

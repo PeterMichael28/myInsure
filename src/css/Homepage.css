@@ -45,6 +45,9 @@
     background: #097AE0;
     color: white;
 }
+.bigBox > a:nth-child(1) h1 {
+    font-size: 1.4rem;
+}
 .box1-link {
     text-decoration: none;  
 }
@@ -100,4 +103,6 @@
 }
 .smBox div:nth-child(3) h1{
     color: black;
+    font-size: 1.3rem;
+    line-height: 1;
 }

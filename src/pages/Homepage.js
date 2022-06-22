@@ -14,14 +14,10 @@ const Homepage = () => {
                 <img src={Logo} alt="logo" />
             </div>
             <div className="main d-flex flex-column justify-content-center align-items-center">
-                <div className="bigBox d-flex flex-wrap">
-
-
-                    {/* <div className="d-flex justify-content-center align-items-center"> */}
+                <div className="bigBox d-flex flex-wrap justify-content-center align-items-center">
                     <Link to='/myInsure/buy' className="d-flex justify-content-center align-items-center text-white box1-link">
-                        <Box topText='BUY' />
+                        <Box topText='BUY' BotText='PHONE' lastText='INSURANCE' />
                     </Link>
-                    {/* </div> */}
                     
                     <div className="box2 d-flex justify-content-center align-items-center">
                         <Link to='/myInsure/claims' className="d-flex justify-content-center align-items-center">
@@ -29,13 +25,12 @@ const Homepage = () => {
                         </Link>
                     
                     </div>
-                    <Box topText='YOUR' BotText='POLICIES'/>
-                    <Box topText='LOREM' BotText='IPSUM'/>
+                    <Box topText='YOUR' BotText='PROFILE'/>
                 </div>
                 <div className="smBox d-flex justify-content-center align-items-center mt-4 mb-5">
                     <Box topText='Customer' BotText='Support' />
                     <Box topText='Info' BotText='&' lastText='FAQs'/>
-                    <Box topText='Lorem' BotText='Ipsum'/>
+                    <Box topText='Our' BotText='Blog'/>
                 </div>
             </div>
             <Navbar />

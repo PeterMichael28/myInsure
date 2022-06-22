@@ -2,6 +2,7 @@ import Back from '../components/Back';
 import Button from '../components/Buttons';
 import Logo from '../assets/file-logo.png'
 import '../css/Signup.css'
+import Inputs from "../components/Inputs";
 
 
 
@@ -15,26 +16,39 @@ const Profile = () => {
                 <h1>Set up your profile with <span className='orange'>US</span></h1>
             </div>
             <form>
+                <Inputs
+                    labelFor = 'fullName'
+                    label = 'Full name'
+                    type = 'text'
+                    placeholder = 'Full name'
+                />
+                <Inputs
+                    labelFor = 'address'
+                    label = 'Address'
+                    type = 'text'
+                    placeholder = 'Address'
+                />
                 <div className="mb-4">
-                    <label htmlFor="fullName" className="form-label m-0 mb-1">Full name</label>
-                    <input type="text" className="form-control" id="fullName" placeholder='Full name' required />
+                    <label htmlFor="gender" className="form-label m-0 mb-1">Gender</label>
+                        <select className="form-select form-control"  id='gender'>
+                            <option value="select">Select Gender</option>
+                            <option value="1">Male</option>
+                            <option value="2">Female</option>
+                            <option value="3">Others</option>
+                        </select>
                 </div>
-                <div className="mb-4">
-                    <label htmlFor="dob" className="form-label m-0 mb-1">Date of birth</label>
-                    <input type="date" className="form-control" id="dob" placeholder='DD/MM/YYYY' required />
-                </div>
-                <div className="mb-4">
-                    <label htmlFor="address" className="form-label m-0 mb-1">Address</label>
-                    <input type="text" className="form-control" id="address" placeholder='Address' required />
-                </div>
-                <div className="mb-4">
-                    <label htmlFor="nin" className="form-label m-0 mb-1">NIN</label>
-                    <input type="tel" className="form-control" id="nin" placeholder='National Identification Number' required />
-                </div>
-                <div className="mb-4">
-                    <label htmlFor="bvn" className="form-label m-0 mb-1">BVN</label>
-                    <input type="tel" className="form-control" id="bvn" placeholder='Bank Verification Number' required />
-                </div>
+                <Inputs
+                    labelFor = 'dob'
+                    label = 'Date of birth'
+                    type = 'date'
+                    placeholder = 'DD/MM/YYYY'
+                />
+                 <Inputs
+                    labelFor = 'bvn'
+                    label = 'BVN'
+                    type = 'tel'
+                    placeholder = 'Bank Verification Number'
+                />
                 <div className="mb-4">
                     <label htmlFor="img" className="form-label m-0 mb-1">Upload profile picture</label>
                     <label htmlFor="img" className="form-control m-0 mb-1 d-flex justify-content-between align-items-center file-input">
