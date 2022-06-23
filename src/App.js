@@ -12,7 +12,12 @@ import Buy from './pages/Buy';
 
 
 
+
 function App() {
+ 
+
+
+
   return (
     <Router>
      <Routes>
@@ -27,6 +32,6 @@ function App() {
      </Routes>
     </Router>
   );
-}
 
+  }
 export default App;

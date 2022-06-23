@@ -11,9 +11,13 @@
 .orange {
     color: orange;
 } 
+.errors {
+    color: crimson;
+    font-size: .9rem;
+}
 label {
     cursor: pointer;
-}
+} 
 .Signup {
     width: 100%;
 }

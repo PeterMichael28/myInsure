@@ -11,13 +11,13 @@ const Dashboard = () => {
 
 
     return ( 
-        <div className="dashboard contain flex-column align-items-start pb-5 px-5">
+        <div className="dashboard contain flex-column align-items-start pb-0 px-5">
             <div className="dash-text">
                 <h1>Hi,</h1>
                 <h1>Abisola</h1>
                 <p>Your Dashboard</p>
             </div>
-            <div className="dash-box d-flex justify-content-center align-items-center w-100 mt-3">
+            <div className="dash-box d-flex justify-content-center align-items-center w-100 mt-2">
                 <div className="dash-left me-4">
                     <Link to='/myInsure'>
                         <div className="dash_pro dash">
@@ -58,14 +58,14 @@ const Dashboard = () => {
                     </div>
                     </Link>
 
-                    <Link to='/myInsure'>
+                    <a href='https://www.myinsure.com.ng/blog'>
                     <div className="dash_learn dash">
                         <h3>Learn</h3>
                         <h3>About</h3>
                         <h3>Insurance</h3>
                         <img src={insuranceicon} alt="" />
                     </div>
-                    </Link>
+                    </a>
                     
                 </div>
             </div>
