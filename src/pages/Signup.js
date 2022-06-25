@@ -1,8 +1,7 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Logo from '../assets/MyInsureLogo..png'
 import Back from '../components/Back';
-import Button from '../components/Buttons';
 import '../css/Signup.css'
 import '../css/Profile.css'
 import Inputs from '../components/Inputs';
@@ -11,9 +10,9 @@ import { useUserAuth } from '../Context/UserAuth';
 const Signup = () => {
     const [passDis, setPassDis] = useState(true);
     const [passDis2, setPassDis2] = useState(true);
-    const [valid, setValid] = useState(false)
     const [err, setErr] = useState('')
     const { register } = useUserAuth()
+    const navigate = useNavigate()
 
     const passToggle = () => {
         setPassDis(!passDis);
@@ -23,7 +22,6 @@ const Signup = () => {
     }
     const [signUp, setSignUp] = useState({
         email: '',
-        phone:'',
         password1: '',
         password2: '',
         isChecked: false
@@ -45,13 +43,20 @@ const Signup = () => {
     const signUpValues = { ...signUp}
 
      
-  const registers = async () => {
+  const registers = async (e) => {
+    e.preventDefault()
+
     try {
-        await register(signUpValues.email, signUpValues.password1) 
-        setValid(true)
+        if (signUpValues.isChecked === true) {
+            await register(signUpValues.email, signUpValues.password1) 
+        navigate('/myInsure/complete-profile')
+        } else {
+            setErr('Agree to myInsure Terms and Conditions to continue')
+            return;
+        }
     } catch (error) { 
      setErr(error.message)
-     setValid(false)
+     navigate('/myInsure/signup')
     }
   }
 
@@ -66,7 +71,7 @@ const Signup = () => {
             </div>
 
             <p className='errors'>{err}</p>
-            <form>
+            <form onSubmit={registers}>
                 <Inputs
                     labelFor = 'Email'
                     label = 'Email'
@@ -76,7 +81,7 @@ const Signup = () => {
                     value = {signUpValues.email}
                     name = 'email'
                 />
-                <Inputs
+                {/* <Inputs
                     labelFor = 'Phone'
                     label = 'Phone number'
                     type = 'tel'
@@ -84,7 +89,7 @@ const Signup = () => {
                     onChange= {handleChange}
                     value = {signUpValues.phone}
                     name = 'phone'
-                />
+                /> */}
                 <div className="mb-2">
                     <label htmlFor="Password" className="form-label m-0 mb-1">Password</label>
                     <div className="form-control pass-con">
@@ -132,11 +137,7 @@ const Signup = () => {
                     </label>
                     </div>
                 </div>
-                <Button
-                    handleClick = {registers}
-                    text='SIGN UP'
-                    location={valid? `/myInsure/complete-profile` :`/myInsure/signup` }
-                />
+                <button type='submit' className='btn gen-btn'>SIGN UP</button>
                  <div className='con3 text-center mt-2'>
                     <p>Already have an account? <Link to='/myInsure/login'>LOG IN</Link></p>
                 </div>

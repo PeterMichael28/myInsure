@@ -1,8 +1,7 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Logo from '../assets/MyInsureLogo..png'
 import Back from '../components/Back';
-import Button from '../components/Buttons';
 import Inputs from '../components/Inputs';
 import '../css/Login.css'
 import { useUserAuth } from '../Context/UserAuth';
@@ -10,9 +9,9 @@ import { useUserAuth } from '../Context/UserAuth';
 const Login = () => {
     const [passDis, setPassDis] = useState(true);
 
-    const [loginvalid, setloginValid] = useState(false)
     const [loginerr, setloginErr] = useState('')
     const { loginIn } = useUserAuth()
+    const navigate = useNavigate();
   
     const [login, setLogin] = useState({
       loginEmail: '',
@@ -29,14 +28,14 @@ const Login = () => {
   
    
   
-    const loggingIn = async () => {
+    const loggingIn = async (e) => {
+      e.preventDefault();
       try {
-       
         await loginIn(login.loginEmail, login.loginPass) 
-          setloginValid(true)
+        navigate('/myInsure/homepage')
       } catch (error) {
         setloginErr(error.message)
-        setloginValid(false)
+        navigate('/myInsure/login')
   
   
       }
@@ -55,7 +54,7 @@ const Login = () => {
                     <img src={Logo} alt="logo" />
                 </div>
                 <p className='errors'>{loginerr}</p>
-                <form>
+                <form onSubmit={loggingIn}>
                     <Inputs 
                         labelFor = 'Email'
                         label = 'Email'
@@ -83,11 +82,7 @@ const Login = () => {
                         </div>
                     </div>
                     <a href="#/" className='forgot-pass d-flex justify-content-center'> Forgot Password?</a>
-                    <Button
-                        handleClick = {loggingIn}
-                        text='LOG IN'
-                        location={ loginvalid? `/myInsure/homepage` :`/myInsure/login` } 
-                    />
+                    <button type='submit' className='btn gen-btn'>LOG IN</button>
                     <p className='new-member d-flex justify-content-center mt-2'>New Member? <Link to='/myInsure/signup'> Sign Up</Link></p>
                 </form>
                 <p className='con4 mt-4 mb-1'>

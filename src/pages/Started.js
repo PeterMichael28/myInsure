@@ -4,22 +4,18 @@ import Google from '../assets/Google-logo.png'
 import Button from '../components/Buttons';
 import '../css/Started.css';
 import { useUserAuth } from '../Context/UserAuth';
-import { useState } from 'react';
 
 const Started = () => {
-    const {googleSignIn} = useUserAuth()
+    const { googleSignIn } = useUserAuth()
     const navigate = useNavigate();
-    const [erro, setErro]  = useState('');
 
     const handleGoogleSignIn = async (e) => {
         e.preventDefault();
         try {
             await googleSignIn()
+            
             navigate('/myInsure/homepage')
-
         } catch (error) {
-            setErro(error)
-            alert(erro);
             navigate('/myInsure/login')
         }
     }

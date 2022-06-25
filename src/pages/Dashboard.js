@@ -6,16 +6,52 @@ import questionicon from '../assets/questionicon.png'
 import buyicon from '../assets/buyicon.png'
 import insuranceicon from '../assets/insuranceicon.png'
 import { Link } from 'react-router-dom'
+import { useUserAuth } from '../Context/UserAuth'
+import { doc, getDoc } from "firebase/firestore";
+import { db } from '../firebase-config'
+import { useEffect } from 'react'
+import { useState } from 'react'
+
+
 
 const Dashboard = () => {
 
 
+    const {user} = useUserAuth();
+    const [data, setData] = useState({})
+    useEffect(() => {
+
+        console.log(user)
+
+        const fetchData = async () => {
+            const docRef = await doc(db, "insured", user.uid);
+            const docSnap = await getDoc(docRef);
+
+            if (docSnap.exists()) {
+                console.log("Document data:", docSnap.data());
+                setData(docSnap.data())
+              } else {
+                // doc.data() will be undefined in this case
+                console.log("No such document!");
+                setData(undefined)
+              }
+            // console.log(docSnap)
+        }
+        fetchData()
+    }, [])
+
+
+    const {logOut} = useUserAuth();
+        const signOut = async() => {
+            await logOut()
+        }
     return ( 
         <div className="dashboard contain flex-column align-items-start pb-0 px-5">
             <div className="dash-text">
                 <h1>Hi,</h1>
-                <h1>Abisola</h1>
+                <h1>{data.firstName}</h1>
                 <p>Your Dashboard</p>
+                <button onClick={signOut}>LogOut</button>
             </div>
             <div className="dash-box d-flex justify-content-center align-items-center w-100 mt-2">
                 <div className="dash-left me-4">
