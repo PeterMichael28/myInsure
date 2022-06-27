@@ -23,7 +23,7 @@ const Profile = () => {
         email: user ? user.email : '',
         address: '',
         phone: '',
-        whatyoudo: '',
+        occupation: '',
         gender: 'select gender',
         meansOfId: 'Select ID type',
         idNum: '',
@@ -45,10 +45,10 @@ const Profile = () => {
             setPro(progress)
             switch (snapshot.state) {
             case 'paused':
-                console.log('Upload is paused');
+                // console.log('Upload is paused');
                 break;
             case 'running':
-                console.log('Upload is running');
+                // console.log('Upload is running');
                 break;
                 default:
                 break;
@@ -66,7 +66,7 @@ const Profile = () => {
           }))
           
             });
-            console.log(profile)
+            // console.log(profile)
         }
         );
         }
@@ -146,13 +146,13 @@ const Profile = () => {
                     name = 'phone'
                 />
                  <Inputs
-                    labelFor = 'whatyoudo'
-                    label = 'What you do'
+                    labelFor = 'occupation'
+                    label = 'Occupation'
                     type = 'text'
-                    placeholder = 'what do you do'
+                    placeholder = 'Occupation'
                     onChange= {handleChange}
-                    value = {profile.whatyoudo}
-                    name = 'whatyoudo'
+                    value = {profile.occupation}
+                    name = 'occupation'
                 />
                 <div className="mb-4">
                     <label htmlFor="gender" className="form-label m-0 mb-1">Gender</label>

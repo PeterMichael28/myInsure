@@ -10,6 +10,7 @@ import Dashboard from './pages/Dashboard';
 import Claims from './pages/Claims';
 import Buy from './pages/Buy';
 import { useUserAuth } from './Context/UserAuth';
+import MyProfile from './pages/MyProfile';
 
 
 
@@ -24,16 +25,17 @@ const RequireAuth = ({children}) => {
 
   return (
     <Router>
-     <Routes>
-       <Route path='/myInsure' element={<Home />}></Route>
-       <Route path='/myInsure/getting-started' element={<Started />}></Route>
-       <Route path='/myInsure/login' element={<Login />}></Route>
-       <Route path='/myInsure/signup' element={<Signup />}></Route>
-       <Route path='/myInsure/complete-profile' element={<RequireAuth><Profile /></RequireAuth>}></Route>
-       <Route path='/myInsure/homepage' element={<RequireAuth><Dashboard /></RequireAuth>}></Route>
-       <Route path='/myInsure/claims' element={<RequireAuth><Claims /></RequireAuth>}></Route>
-       <Route path='/myInsure/buy' element={<RequireAuth><Buy /></RequireAuth>}></Route>
-     </Routes>
+      <Routes>
+        <Route path='/myInsure' element={<Home />}></Route>
+        <Route path='/myInsure/getting-started' element={<Started />}></Route>
+        <Route path='/myInsure/login' element={<Login />}></Route>
+        <Route path='/myInsure/signup' element={<Signup />}></Route>
+        <Route path='/myInsure/complete-profile' element={<RequireAuth><Profile /></RequireAuth>}></Route>
+        <Route path='/myInsure/homepage' element={<RequireAuth><Dashboard /></RequireAuth>}></Route>
+        <Route path='/myInsure/claims' element={<RequireAuth><Claims /></RequireAuth>}></Route>
+        <Route path='/myInsure/buy' element={<RequireAuth><Buy /></RequireAuth>}></Route>
+        <Route path='/myInsure/myprofile' element={<RequireAuth><MyProfile /></RequireAuth>}></Route>
+      </Routes>
     </Router>
   );
 

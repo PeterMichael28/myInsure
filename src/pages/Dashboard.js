@@ -20,19 +20,16 @@ const Dashboard = () => {
     const {user} = useUserAuth();
     const [data, setData] = useState({})
     useEffect(() => {
-
-        console.log(user)
-
         const fetchData = async () => {
             const docRef = await doc(db, "insured", user.uid);
             const docSnap = await getDoc(docRef);
 
             if (docSnap.exists()) {
-                console.log("Document data:", docSnap.data());
+                // console.log("Document data:", docSnap.data());
                 setData(docSnap.data())
               } else {
                 // doc.data() will be undefined in this case
-                console.log("No such document!");
+                // console.log("No such document!");
                 setData(undefined)
               }
             // console.log(docSnap)
@@ -55,7 +52,7 @@ const Dashboard = () => {
             </div>
             <div className="dash-box d-flex justify-content-center align-items-center w-100 mt-2">
                 <div className="dash-left me-4">
-                    <Link to='/myInsure'>
+                    <Link to='/myInsure/myprofile'>
                         <div className="dash_pro dash">
                             <img src={Logo} alt="logo" className='pp' />
                             <h3>Your</h3>
