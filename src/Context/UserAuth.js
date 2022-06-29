@@ -7,8 +7,6 @@ import {
     onAuthStateChanged,
     GoogleAuthProvider,
     signInWithPopup,
-    signInWithRedirect,
-    getRedirectResult
 } from "firebase/auth"
 import { auth } from "../firebase-config";
 import { useEffect } from "react";

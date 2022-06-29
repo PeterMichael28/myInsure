@@ -1,40 +1,44 @@
-#my-claims .top-bg {
+.top-bg {
     height: 65vh;
     background: rgba(9, 122, 224, 0.3);
 }
-#my-claims.top-bg h1 {
+.top-bg h1 {
     font-weight: 700;
     font-size: 24px;
     color: #F1851A;
     margin-top: 3.6rem;
 }
-#my-claims .bottom-bg {
-    height: 92vh;
+#terms .bottom-bg {
+    height: 85vh;
     border-top-left-radius: 57px;
     border-top-right-radius: 57px;
     background: #F3F3F1;
     position: relative;
-    top: -55px;
+    top: -40px;
 }
-#my-claims .profile-con {
+#terms .profile-con {
     width: 90%;
     position: absolute;
-    top: -42%;
+    top: -48%;
     height: auto;
     left: 20px;
     background: rgba(9, 122, 224, 0.71);    
     border-radius: 31px;
 }
-.make-claim {
+#terms .profile-con h4 {
+    font-size: .9rem;
+    font-weight: 700;
+}
+#terms .make-claim {
     width: 90%;
     height: auto;
     background: rgba(255, 218, 175, 0.33);
     border-radius: 31px;
 }
-#my-claims .make-claim input {
+.make-claim input {
     margin-right: 10px;
-    height: 20px;
-    width: 60px;
+    height: 17px;
+    width: 20px;
 }
 .make-claim label {
    font-size: 13px;
@@ -45,37 +49,31 @@
     font-size:19px;
     color: #F1851A;
 }
-.make-claim .button {
+#terms .make-claim button {
     background: white;
-    padding: 10px 22px;
+    padding: 10px 18px;
     border-radius: 10px;
     color: #F1851A;
     font-weight: 700;
     letter-spacing: 1px;
 }
-#my-claims .profile-con label {
-    font-weight: 700;
-    font-size: 15px;
-    color: #FFFFFF;
-    }
 
-#my-claims .profile-con input {
-    height: 35px;
+/*terms 2*/
+#terms .terms2-bottom-bg {
+    height: 105vh;
+    border-top-left-radius: 57px;
+    border-top-right-radius: 57px;
+    background: #F3F3F1;
+    position: relative;
+    top: -40px;
 }
-#my-claims .profile-con input,
-#my-claims .profile-con textarea {
-    border-radius: 30px;
-    width: 100%;
-    border-color:white ;
-    padding: 10px;
-    margin-bottom: 14px;
+#terms .terms2-bottom-bg .profile-con {
+    width: 90%;
+    position: absolute;
+    top: -40%;
+    height: auto;
+    left: 20px;
+    background: rgba(9, 122, 224, 0.71);    
+    border-radius: 31px;
 }
-.input-div {
-    background: white;
-    border-radius: 30px;
-    padding: 0;
-}
-#my-claims .profile-con input:focus,
-#my-claims .profile-con textarea:focus {
-   outline: white;
-}
+

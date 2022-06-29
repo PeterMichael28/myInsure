@@ -81,7 +81,10 @@ label {
     top: 15px;
     left: 15px;
     cursor: pointer;
-
+}
+.color-back {
+    top: 25px;
+    left: 20px;
 }
 /*title*/
 .login-title {

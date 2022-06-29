@@ -35,7 +35,7 @@ const Dashboard = () => {
             // console.log(docSnap)
         }
         fetchData()
-    }, [])
+    }, [user.uid])
 
 
     const {logOut} = useUserAuth();

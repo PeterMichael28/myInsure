@@ -34,6 +34,64 @@ const Homepage = () => {
                 </div>
             </div>
             <Navbar />
+
+             {/* <Back />
+        <div className='Signup'>
+            <div className='login-title profile-title'>
+                <h1>MAKE A <span className='orange'>CLAIM</span></h1>
+            </div>
+            <form>
+
+                <Inputs 
+                    labelFor = 'Lorem'
+                    label = 'Lorem Ipsum'
+                    type = 'text'
+                    placeholder = 'Lorem Ipsum'
+                />
+                <Inputs 
+                    labelFor = 'Lorem'
+                    label = 'Lorem Ipsum'
+                    type = 'text'
+                    placeholder = 'Lorem Ipsum'
+                />
+                <Inputs 
+                    labelFor = 'Lorem'
+                    label = 'Lorem Ipsum'
+                    type = 'text'
+                    placeholder = 'Lorem Ipsum'
+                />
+                <Inputs 
+                    labelFor = 'Lorem'
+                    label = 'Lorem Ipsum'
+                    type = 'text'
+                    placeholder = 'Lorem Ipsum'
+                />
+                <Inputs 
+                    labelFor = 'Lorem'
+                    label = 'Lorem Ipsum'
+                    type = 'text'
+                    placeholder = 'Lorem Ipsum'
+                />
+                <Inputs 
+                    labelFor = 'Lorem'
+                    label = 'Lorem Ipsum'
+                    type = 'text'
+                    placeholder = 'Lorem Ipsum'
+                />
+                <Inputs 
+                    labelFor = 'Lorem'
+                    label = 'Lorem Ipsum'
+                    type = 'text'
+                    placeholder = 'Lorem Ipsum'
+                />
+                <div className='mb-4 mt-5'>
+                <Button
+                    text="LET'S GO"
+                    location='/myInsure/homepage'
+                />
+                </div>
+            </form>
+        </div> */}
         </div>
      );
 }

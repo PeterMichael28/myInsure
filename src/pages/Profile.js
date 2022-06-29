@@ -1,6 +1,4 @@
 import Back from '../components/Back';
-import Button from '../components/Buttons';
-import Logo from '../assets/file-logo.png'
 import '../css/Signup.css'
 import Inputs from "../components/Inputs";
 import { doc, serverTimestamp, setDoc } from "firebase/firestore";
@@ -41,7 +39,7 @@ const Profile = () => {
         uploadTask.on('state_changed', 
         (snapshot) => {
             const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-            console.log('Upload is ' + progress + '% done');
+            // console.log('Upload is ' + progress + '% done');
             setPro(progress)
             switch (snapshot.state) {
             case 'paused':
@@ -83,7 +81,7 @@ const Profile = () => {
 
     const addData = async (e) => {
         e.preventDefault()
- 
+        // console.log(profile)
         await setDoc(doc(db, "insured", user.uid), {
           ...profile,
           timeStamp: serverTimestamp()

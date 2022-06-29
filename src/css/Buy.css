@@ -1,85 +1,115 @@
-.buy-title {
-    margin: 1.6rem auto;
-}
-.buy-title h3 {
-    font-size: 22px;
-    line-height: 25px;
-    margin: 0;
-    padding: 0; 
 
-}
 
-.phone p {
-    cursor: pointer;
-    padding-bottom: 0;
+#buy .top-bg {
+    height: 55vh;
+    background: rgba(9, 122, 224, 0.3);
 }
-.phone p:nth-child(1) {
-    background: linear-gradient(234.87deg, #097AE0 -32.31%, #FC814A 118.63%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
+#buy .top-bg h1 {
+    font-weight: 700;
+    font-size: 24px;
+    color: #F1851A;
+    margin-top: 3.3rem;
+}
+#buy .bottom-bg {
+    height: 89vh;
+    border-top-left-radius: 57px;
+    border-top-right-radius: 57px;
+    background: #F3F3F1;;
     position: relative;
+    top: -45px;
 }
-.phone p:nth-child(1)::after {
-    content: '';
+#buy .profile-con {
+    width: 90%;
     position: absolute;
-    width: 75px;
-    height: 1px;
-    background: linear-gradient(234.87deg, #097AE0 -32.31%, #FC814A 118.63%);
-    left: 0;
-    bottom: 4px;
+    top: -34%;
+    height: auto;
+    left: 20px;
+    background: rgba(9, 122, 224, 0.71);    
+    border-radius: 31px;
+}
 
+#buy .phone-details {
+    width: 90%;
+    height: auto;
+    background: #fff;
+    border-radius: 31px;
+    
 }
-.phone p:nth-child(2) {
-    color: red;
-    position: relative;
+#buy .make-claim {
+    width: 90%;
+    height: auto;
+    background: rgba(255, 218, 175, 0.33);
+    border-radius: 31px;
+    margin-top: 1.5rem;
 }
-.phone p:nth-child(2)::after {
-    content: '';
-    position: absolute;
-    width: 70px;
-    height: 1px;
-    background:red;
-    left: 0;
-    bottom: 4px;
-
-}
-/*payment plans*/
-.pay-btn {
-    width: 140px;
-    height: 39px;
-    background-color: white;
-    border: 1px solid #097AE0;
+#buy .phone-details h3 {
     color: #097AE0;
-    transition: .4s ease all;
+    font-weight: 800;
+    font-size: 15px;
 }
-.pay-btn:hover,
-.pay-btn.active {
-    background-color: #097AE0;
-    color: white;
+#buy .phone-details h1 {
+    font-weight: 400;
+    font-size: 38px;
+    line-height: 43px;
+    color: rgba(241, 133, 26, 0.81);
 }
-.pay-details {
-    border: 1px solid #097AE0;
-    padding: 1.3rem 3rem;
-    margin-top: 1rem;
-    border-radius: 15px;
 
+#buy .make-claim a {
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 26px;
+    color: rgba(241, 133, 26, 0.81);
 }
-.pay-price h3 {
-    font-size: .9rem;
+#buy .make-claim input {
+    margin-right: 10px;
+    height: 20px;
+    width: 20px;
 }
-.pay-price h3 span {
-    font-size: 3rem;
+#buy .make-claim label {
+   font-size: 13px;
+   color: #F1851A;
 }
-.pay-price p {
-    font-size: 1.1rem;
-    margin: 10px auto 30px;
-    letter-spacing: 1px;
-    color: rgba(0, 0, 0, .7);
+#buy .profile-con .det {
+    margin-bottom: 14px;
 }
-.pay-texts {
-    font-size: .95rem;
-    font-weight: normal;
-    color: rgba(0, 0, 0, .7);
+
+#buy .profile-con .det span {
+    color: rgba(255, 218, 175, 0.993);
+    font-size: 16px;
+    font-weight: 700;
+}
+#buy .profile-con .det h2 {
+    font-size: 17px;
+    color: #FFFFFF;
+    font-weight: 600;
+    line-height: .7;
+}
+::placeholder {
+    color: rgba(0, 0, 0, .5);
+}
+#buy .profile-con label {
+    font-weight: 700;
+    font-size: 15px;
+    color: #FFFFFF;
+    }
+
+#buy .profile-con input {
+    height: 35px;
+}
+#buy .profile-con input,
+#buy .profile-con textarea {
+    border-radius: 30px;
+    width: 100%;
+    border-color:white ;
+    padding: 10px;
+    margin-bottom: 14px;
+}
+.input-div {
+    background: white;
+    border-radius: 30px;
+    padding: 0;
+}
+#buy .profile-con input:focus,
+#buy .profile-con textarea:focus {
+   outline: white;
 }

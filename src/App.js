@@ -11,6 +11,8 @@ import Claims from './pages/Claims';
 import Buy from './pages/Buy';
 import { useUserAuth } from './Context/UserAuth';
 import MyProfile from './pages/MyProfile';
+import Terms from './pages/Terms';
+import Terms2 from './pages/Terms2';
 
 
 
@@ -35,6 +37,8 @@ const RequireAuth = ({children}) => {
         <Route path='/myInsure/claims' element={<RequireAuth><Claims /></RequireAuth>}></Route>
         <Route path='/myInsure/buy' element={<RequireAuth><Buy /></RequireAuth>}></Route>
         <Route path='/myInsure/myprofile' element={<RequireAuth><MyProfile /></RequireAuth>}></Route>
+        <Route path='/myInsure/terms' element={<RequireAuth><Terms /></RequireAuth>}></Route>
+        <Route path='/myInsure/terms2' element={<RequireAuth><Terms2 /></RequireAuth>}></Route>
       </Routes>
     </Router>
   );
