@@ -42,7 +42,7 @@ const MyProfile = () => {
 
             </div>
             <div className='bottom-bg w-100 d-flex justify-content-end flex-column align-items-center mb-0 pb-0'>
-                <div className='profile-con p-3 pb-0'>
+                <div className='profile-con p-3 pb-2'>
                     <div className="profile-pix"><img src={data.img} alt="logo" className='w-100' /></div>
                     <h2 className='text-center'>Your Info</h2>
                     <div className="profile-details">
@@ -94,7 +94,7 @@ const MyProfile = () => {
                         </tr>
                     </table>
                 </div>
-                <div className='make-claim d-flex align-items-center justify-content-center mb-0 pb-0'>
+                <div className='make-claim d-flex align-items-center justify-content-center mb-3 pb-0'>
                     <Link to='' className='d-flex align-items-center justify-content-between' >
                         Your Insurance Certificate 
                         <div className='link-arrow d-flex align-items-center justify-content-center'>

@@ -1,9 +1,9 @@
 #my-profile .top-bg {
-    height: 65vh;
+    height: 58vh;
     background: rgba(9, 122, 224, 0.3);
 }
 #my-profile .bottom-bg {
-    height: 94vh;
+    height: 76vh;
     border-top-left-radius: 57px;
     border-top-right-radius: 57px;
     background: #fff;
@@ -13,9 +13,11 @@
 #my-profile .profile-con {
     width: 90%;
     position: absolute;
-    top: -36%;
     height: auto;
-    left: 20px;
+    left: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    top: -41%;
     background: rgba(9, 122, 224, 0.71);    
     border-radius: 31px;
 }
@@ -23,7 +25,9 @@
     position: relative;
     width: 110px;
     height: 110px;
-    left: 110px;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
     top: -80px;
     background: #FFFFFF;
     border: 5px solid rgba(250, 135, 1, 0.74);
@@ -32,6 +36,8 @@
 .profile-pix img {
     object-fit: contain;
     width: 100%;
+    height: 100%;
+    border-radius: 50%;
 }
 
 .phone-details {

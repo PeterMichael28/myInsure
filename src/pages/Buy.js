@@ -19,7 +19,7 @@ const Buy = () => {
             <h2 className='text-center mt-0 mb-4 fs-4'>Buy Policy</h2>
                     <div>
                         <label htmlFor="imei" className='d-block'>Claim No</label>
-                        <input type="tel" id='imei' name='imei' className='p-0 m-0' />
+                        <input type="tel" id='imei' name='imei' className='m-0' />
                     </div>
                     <div className="det mt-2">
                         <span>Phone Brand</span>
@@ -31,18 +31,18 @@ const Buy = () => {
                     </div>
                     <div className='mb-2'>
                         <label htmlFor="dop" className='d-block'>Date of Purchase</label>
-                        <input type="date" id='dop' name='dop' className='p-3 m-0' />
+                        <input type="date" id='dop' name='dop' className='m-0' />
                     </div>
                     <div>
                         <label htmlFor="con" className='d-block'>Condition of Phone</label>
-                        <input type="text" id='con' name='con' className='p-0 m-0' />
+                        <input type="text" id='con' name='con' className='m-0' />
                     </div>
                 </div>
             <div className='phone-details p-3 text-center'>
                 <h3>Premium per annum</h3>
                 <h1>#2500.00</h1>
             </div>
-            <div className='make-claim mt-3 mb-0 pb-2 d-flex flex-column align-items-center justify-content-center'>
+            <div className='make-claim mt-3 mb-4 pb-2 d-flex flex-column align-items-center justify-content-center'>
             <div className="p-3 d-flex">
                     <input className="" 
                         type="checkbox" 
@@ -53,7 +53,6 @@ const Buy = () => {
                     </label>
                     </div>
                     <Link className='button btn mt-0' to='/myInsure/terms'>Proceed</Link>
-                    {/* <button className='btn mt-0'>Proceed</button> */}
                 </div>
         </div>
     </div>

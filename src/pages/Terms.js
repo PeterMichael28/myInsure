@@ -42,7 +42,6 @@ const Terms = () => {
                     </label>
                     </div>
                     <Link className='button btn mt-0' to='/myInsure/terms2'>Proceed</Link>
-                    {/* <button className='btn mt-0'>Proceed</button> */}
                 </div>
                 </div>
             </div>

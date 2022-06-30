@@ -43,7 +43,7 @@ const Dashboard = () => {
             await logOut()
         }
     return ( 
-        <div className="dashboard contain flex-column align-items-start pb-0 px-5">
+        <div className="dashboard contain flex-column align-items-start pt-2 pb-2 px-5">
             <div className="dash-text">
                 <h1>Hi,</h1>
                 <h1>{data.firstName}</h1>
@@ -67,14 +67,14 @@ const Dashboard = () => {
                             <h3>Claim</h3>
                             <img src={claimicon} alt="icon" className='claim-icon' />
                         </div>
-                    </Link>
+                    </Link> 
                     
-                    <Link to='/myInsure'>
+                    <a href='https://www.myinsure.com.ng/#faq'>
                     <div className="dash_faq d-flex align-items-center justify-content-center">
                         <h1>FAQs</h1>
                         <img src={questionicon} alt="icon" />
                     </div>
-                    </Link>
+                    </a>
                 </div>
 
                 <div className="dash-right">

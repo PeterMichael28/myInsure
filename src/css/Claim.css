@@ -1,5 +1,5 @@
 #my-claims .top-bg {
-    height: 65vh;
+    height: 55vh;
     background: rgba(9, 122, 224, 0.3);
 }
 #my-claims.top-bg h1 {
@@ -9,7 +9,7 @@
     margin-top: 3.6rem;
 }
 #my-claims .bottom-bg {
-    height: 92vh;
+    height: 71vh;
     border-top-left-radius: 57px;
     border-top-right-radius: 57px;
     background: #F3F3F1;
@@ -19,7 +19,7 @@
 #my-claims .profile-con {
     width: 90%;
     position: absolute;
-    top: -42%;
+    top: -48%;
     height: auto;
     left: 20px;
     background: rgba(9, 122, 224, 0.71);    
@@ -67,7 +67,7 @@
     border-radius: 30px;
     width: 100%;
     border-color:white ;
-    padding: 10px;
+    padding: 10px 20px;
     margin-bottom: 14px;
 }
 .input-div {

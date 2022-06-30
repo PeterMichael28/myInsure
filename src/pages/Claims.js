@@ -31,7 +31,7 @@ const Claims = () => {
                         </div>
                     </div>
                 </div>
-                <div className='make-claim mb-0 pb-2 d-flex flex-column align-items-center justify-content-center'>
+                <div className='make-claim mb-3 pb-2 d-flex flex-column align-items-center justify-content-center'>
                     <h1 className='text-center mt-2 mb-1'>DECLARATION</h1>
                 <div className="px-3 d-flex">
                     <input className="" 

@@ -1,0 +1,40 @@
+.top {
+    background: rgba(9, 122, 224, 0.3);
+    height: 100vh;
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto;
+    display: flex;
+}
+.bot {
+    width: 100%;
+    border-top-left-radius: 65px;
+    border-top-right-radius: 65px;
+    background: white;
+    height: 60%;
+    align-self: flex-end;
+    /* position: relative; */
+}
+.con {
+    position: relative;
+    width: 90%;
+    height: auto;
+    background: rgba(9, 122, 224, 0.71);
+    border-radius: 31px;
+    left: 0;
+    top: -40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* .ppp {
+    width: 90%;
+    height: 30vh;
+    background: green;
+    margin-top: -20%;
+}
+.pp {
+    width: 90%;
+    height: 30vh;
+    background: green;
+    margin-top: 10px; 
+} */

@@ -1,5 +1,5 @@
 .top-bg {
-    height: 65vh;
+    height: 50vh;
     background: rgba(9, 122, 224, 0.3);
 }
 .top-bg h1 {
@@ -9,7 +9,7 @@
     margin-top: 3.6rem;
 }
 #terms .bottom-bg {
-    height: 85vh;
+    height: 58vh;
     border-top-left-radius: 57px;
     border-top-right-radius: 57px;
     background: #F3F3F1;
@@ -19,7 +19,7 @@
 #terms .profile-con {
     width: 90%;
     position: absolute;
-    top: -48%;
+    top: -54%;
     height: auto;
     left: 20px;
     background: rgba(9, 122, 224, 0.71);    
@@ -60,7 +60,7 @@
 
 /*terms 2*/
 #terms .terms2-bottom-bg {
-    height: 105vh;
+    height: 83vh;
     border-top-left-radius: 57px;
     border-top-right-radius: 57px;
     background: #F3F3F1;
@@ -70,7 +70,7 @@
 #terms .terms2-bottom-bg .profile-con {
     width: 90%;
     position: absolute;
-    top: -40%;
+    top: -38%;
     height: auto;
     left: 20px;
     background: rgba(9, 122, 224, 0.71);    
