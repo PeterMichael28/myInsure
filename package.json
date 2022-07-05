@@ -1,9 +1,10 @@
 {
   "name": "myInsure",
-  "homepage": "http://PeterMichael28.github.io/myInsure",
+  "homepage": " https://myinsure-9b6d0.web.app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@paystack/inline-js": "^2.12.5",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.1.1",
     "@testing-library/user-event": "^13.5.0",

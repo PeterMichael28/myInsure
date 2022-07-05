@@ -70,6 +70,8 @@ const Profile = () => {
         }
         file && upload()
     }, [file])
+
+
     let handleChange = (e) => {
         setProfile({
             ...profile,
@@ -86,9 +88,8 @@ const Profile = () => {
           ...profile,
           timeStamp: serverTimestamp()
           });
-          navigate('/myInsure/homepage')
-
-    }
+          navigate('/homepage')
+    } 
 
     return ( 
         <div id='' className='contain'>

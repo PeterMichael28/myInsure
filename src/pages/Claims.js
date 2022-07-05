@@ -17,7 +17,7 @@ const Claims = () => {
                 <div className='profile-con p-4 pb-3'>
                     <h2 className='text-center mt-0'>Make A Claim</h2>
                     <div>
-                        <label htmlFor="claimno" className='d-block'>Claim No</label>
+                        <label htmlFor="claimno" className='d-block'>IMEI No</label>
                         <input type="text" id='claimno' name='claimno' />
                     </div>
                     <div>
@@ -42,7 +42,7 @@ const Claims = () => {
                     I, the undersigned do hereby declare that the above information provided is true and complete. I do agree that my claim may be repudiated if any of the information provided by me is false
                     </label>
                     </div>
-                    <Link className='button btn' to='/myInsure/homepage'>Proceed</Link>
+                    <Link className='button btn' to='/homepage'>Proceed</Link>
                     {/* <button className='btn mt-0'>Submit</button> */}
                 </div>
                 </div>

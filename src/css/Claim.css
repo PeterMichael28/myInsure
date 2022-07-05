@@ -2,14 +2,14 @@
     height: 55vh;
     background: rgba(9, 122, 224, 0.3);
 }
-#my-claims.top-bg h1 {
+#my-claims .top-bg h1 {
     font-weight: 700;
     font-size: 24px;
     color: #F1851A;
     margin-top: 3.6rem;
 }
 #my-claims .bottom-bg {
-    height: 71vh;
+    height: 73vh;
     border-top-left-radius: 57px;
     border-top-right-radius: 57px;
     background: #F3F3F1;
@@ -19,7 +19,7 @@
 #my-claims .profile-con {
     width: 90%;
     position: absolute;
-    top: -48%;
+    top: -45%;
     height: auto;
     left: 20px;
     background: rgba(9, 122, 224, 0.71);    

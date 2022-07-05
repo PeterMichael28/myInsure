@@ -28,7 +28,7 @@
 .con2 {
     margin: 5rem 0 0;
 }
-.con2 .google-link {
+.google-link {
     text-decoration: none;
     display: flex;
     border: 1px solid blue;
@@ -43,10 +43,10 @@
     text-transform: uppercase;
     transition: .3s ease all;
 }
-.con2 .google-link:hover {
+.google-link:hover {
     border: 1px solid rgb(29, 29, 56);
 }
-.con2 .google-logo {
+.google-logo {
     object-fit: contain;
     width: 25px;
     margin-right: 2.6rem;

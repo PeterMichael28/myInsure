@@ -2,8 +2,21 @@
     height: 58vh;
     background: rgba(9, 122, 224, 0.3);
 }
+#my-profile .top-bg .logout {
+    padding: 10px 15px;
+    position: absolute;
+    outline: none;
+    border: none;
+    background: rgba(9, 122, 224, 0.91); 
+    border-radius: 15px;
+    font-weight: 700;
+    color: white;
+    right: 33px;
+    top: 40px;
+
+}
 #my-profile .bottom-bg {
-    height: 76vh;
+    height: 79vh;
     border-top-left-radius: 57px;
     border-top-right-radius: 57px;
     background: #fff;

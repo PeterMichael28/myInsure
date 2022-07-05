@@ -1,16 +1,17 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Logo from '../assets/MyInsureLogo..png'
-import Back from '../components/Back';
+import back from '../assets/arrow-back.png'
 import Inputs from '../components/Inputs';
 import '../css/Login.css'
 import { useUserAuth } from '../Context/UserAuth';
+import Google from '../assets/Google-logo.png'
 
 const Login = () => {
     const [passDis, setPassDis] = useState(true);
 
     const [loginerr, setloginErr] = useState('')
-    const { loginIn } = useUserAuth()
+    const { loginIn, resetPass, googleSignIn } = useUserAuth()
     const navigate = useNavigate();
   
     const [login, setLogin] = useState({
@@ -32,22 +33,51 @@ const Login = () => {
       e.preventDefault();
       try {
         await loginIn(login.loginEmail, login.loginPass) 
-        navigate('/myInsure/homepage')
+        navigate('/homepage')
       } catch (error) {
         setloginErr(error.message)
-        navigate('/myInsure/login')
+        navigate('/login')
   
   
       }
     }
+
+    const forgotPass = async (e) => {
+      try {
+        await resetPass(login.loginEmail)
+        setloginErr('password reset link sent, check your email inbox or spam to continue')
+        setLogin( () => ({
+          ...login,
+          loginEmail: ''
+        })
+        )
+      } catch (error) {
+        setloginErr(error.message)
+      }
+    }
+    const handleGoogleSignIn = async (e) => {
+      e.preventDefault();
+      try {
+          await googleSignIn()
+          
+          navigate('/homepage')
+      } catch (error) {
+          navigate('/login')
+      }
+  }
   
     const passToggle = () => {
         setPassDis(!passDis)
         console.log('show')
     }
+    const handleClick = () => {
+        navigate('/getting-started')
+    }
     return ( 
         <div id='login' className='contain'>
-            <Back />
+            <div className='back' onClick={handleClick}>
+            <img src={back} alt="back" />
+          </div>
             <div className='login'>
                 <div className='login-title'>
                     <h1>Log In to</h1>
@@ -81,15 +111,15 @@ const Login = () => {
                             </span>
                         </div>
                     </div>
-                    <a href="#/" className='forgot-pass d-flex justify-content-center'> Forgot Password?</a>
+                    <p href="#/" className='forgot-pass d-flex justify-content-center' onClick={forgotPass}> Forgot Password?</p>
                     <button type='submit' className='btn gen-btn'>LOG IN</button>
-                    <p className='new-member d-flex justify-content-center mt-2'>New Member? <Link to='/myInsure/signup'> Sign Up</Link></p>
+                    <a href="#/" className='google-link text-primary text-center' onClick={handleGoogleSignIn}>
+                        
+                        <img className='google-logo me-3' src={Google} alt="Google-logo" />
+                        Login With Google
+                    </a>
+                    <p className='new-member d-flex justify-content-center mt-2'>New Member? <Link to='/signup'> Sign Up</Link></p>
                 </form>
-                <p className='con4 mt-4 mb-1'>
-                    By continuing, you indicate that you agree to myInsure's 
-                    <a href="#/"> Terms of Service</a> and
-                    <a href="#/"> Privacy Policy</a>
-                </p>
             </div>
         </div>
      );

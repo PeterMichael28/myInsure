@@ -11,6 +11,7 @@ import { useState } from 'react'
 const MyProfile = () => {
 
 
+
     const {user} = useUserAuth();
     const [data, setData] = useState({})
     useEffect(() => {
@@ -32,14 +33,17 @@ const MyProfile = () => {
     }, [user.uid])
 
 
-
+    const {logOut} = useUserAuth();
+    const signOut = async() => {
+        await logOut()
+    }
 
 
     return ( 
         <div id='my-profile' className="contain flex-column p-0 mb-0">
             <ColorBack />
             <div className='top-bg w-100'>
-
+                <button className='logout' onClick={signOut}>LOG OUT</button>
             </div>
             <div className='bottom-bg w-100 d-flex justify-content-end flex-column align-items-center mb-0 pb-0'>
                 <div className='profile-con p-3 pb-2'>
@@ -80,22 +84,25 @@ const MyProfile = () => {
                     <h2 className='text-center mb-2'>Policy Info</h2>
                   
                     <table>
+                        <tbody>
                         <tr>
                             <td className='key'>Phone brand</td>
-                            <td className='value'>Iphone X</td>
+                            <td className='value'>{data &&( data.phoneBrand + ' ' + data.phoneModel)}</td>
                         </tr>
                         <tr>
                             <td className='key'>IMEI Number</td>
-                            <td className='value'>4444656555555544443</td>
+                            <td className='value'>{data && data.imeiNo}</td>
                         </tr>
                         <tr>
                             <td className='key'>Policy No</td>
                             <td className='value'>4444656555555544443</td>
                         </tr>
+                        </tbody>
+                      
                     </table>
                 </div>
                 <div className='make-claim d-flex align-items-center justify-content-center mb-3 pb-0'>
-                    <Link to='' className='d-flex align-items-center justify-content-between' >
+                    <Link to='/homepage' className='d-flex align-items-center justify-content-between' >
                         Your Insurance Certificate 
                         <div className='link-arrow d-flex align-items-center justify-content-center'>
                             <img src={Arrow} alt="#" />

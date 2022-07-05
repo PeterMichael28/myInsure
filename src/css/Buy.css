@@ -1,7 +1,7 @@
 
 
 #buy .top-bg {
-    height: 45vh;
+    height: 85vh;
     background: rgba(9, 122, 224, 0.3);
 }
 #buy .top-bg h1 {
@@ -11,17 +11,34 @@
     margin-top: 3.3rem;
 }
 #buy .bottom-bg {
-    height: 72vh;
+    height: 123vh;
     border-top-left-radius: 57px;
     border-top-right-radius: 57px;
     background: #F3F3F1;;
     position: relative;
     top: -45px;
 }
+
+#buy .instructions,
+#buy .disclaimer {
+    font-size: .7rem;
+    color: rgba(255, 218, 175, 1);
+}
+
+#buy .instructions h5,
+#buy .disclaimer h5 {
+    font-size: .8rem;
+}
+
+#buy .instructions h1,
+#buy .disclaimer h1 {
+    font-size: 1.1rem;
+}
+
 #buy .profile-con {
     width: 90%;
     position: absolute;
-    top: -37%;
+    top: -53%;
     height: auto;
     left: 20px;
     background: rgba(9, 122, 224, 0.71);    
@@ -93,11 +110,13 @@
     color: #FFFFFF;
     }
 
-#buy .profile-con input {
+#buy .profile-con input,
+#buy .profile-con select {
     height: 35px;
 }
 #buy .profile-con input,
-#buy .profile-con textarea {
+#buy .profile-con textarea,
+#buy .profile-con select {
     border-radius: 30px;
     width: 100%;
     border-color:white ;

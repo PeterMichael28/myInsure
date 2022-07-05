@@ -1,15 +1,16 @@
-.top-bg {
+#terms .top-bg {
     height: 50vh;
     background: rgba(9, 122, 224, 0.3);
 }
-.top-bg h1 {
+#terms .top-bg h1,
+#terms2 .top-bg h1 {
     font-weight: 700;
     font-size: 24px;
     color: #F1851A;
     margin-top: 3.6rem;
 }
 #terms .bottom-bg {
-    height: 58vh;
+    height: 66vh;
     border-top-left-radius: 57px;
     border-top-right-radius: 57px;
     background: #F3F3F1;
@@ -19,7 +20,7 @@
 #terms .profile-con {
     width: 90%;
     position: absolute;
-    top: -54%;
+    top: -44%;
     height: auto;
     left: 20px;
     background: rgba(9, 122, 224, 0.71);    
@@ -60,7 +61,7 @@
 
 /*terms 2*/
 #terms .terms2-bottom-bg {
-    height: 83vh;
+    height: 86vh;
     border-top-left-radius: 57px;
     border-top-right-radius: 57px;
     background: #F3F3F1;
@@ -70,10 +71,14 @@
 #terms .terms2-bottom-bg .profile-con {
     width: 90%;
     position: absolute;
-    top: -38%;
+    top: -35%;
     height: auto;
     left: 20px;
     background: rgba(9, 122, 224, 0.71);    
     border-radius: 31px;
+}
+#terms2 .top-bg {
+    height: 60vh;
+    background: rgba(9, 122, 224, 0.3);
 }
 

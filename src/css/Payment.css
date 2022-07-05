@@ -1,0 +1,60 @@
+#payment .top-bg {
+    height: 40vh;
+    background: rgba(9, 122, 224, 0.3);
+}
+#payment .top-bg h1 {
+    font-weight: 700;
+    font-size: 24px;
+    color: #F1851A;
+    margin-top: 3.6rem;
+}
+#payment .bottom-bg {
+    height: 61vh;
+    border-top-left-radius: 57px;
+    border-top-right-radius: 57px;
+    background: #F3F3F1;
+    position: relative;
+    top: -40px;
+}
+#payment .profile-con {
+    width: 90%;
+    position: absolute;
+    top: -27%;
+    height: auto;
+    left: 20px;
+    background: rgba(9, 122, 224, 0.71);    
+    border-radius: 31px;
+}
+#payment .profile-con h4 {
+    font-size: .9rem;
+    font-weight: 700;
+}
+::placeholder {
+    color: rgba(0, 0, 0, .5);
+}
+#payment .profile-con label {
+    font-weight: 700;
+    font-size: 15px;
+    color: #FFFFFF;
+    }
+
+#payment .profile-con input {
+    height: 35px;
+}
+#payment .profile-con input,
+#payment .profile-con textarea {
+    border-radius: 30px;
+    width: 100%;
+    border-color:white ;
+    padding: 10px 15px;
+    margin-bottom: 14px;
+}
+.input-div {
+    background: white;
+    border-radius: 30px;
+    padding: 0;
+}
+#payment .profile-con input:focus,
+#payment .profile-con textarea:focus {
+   outline: white;
+}

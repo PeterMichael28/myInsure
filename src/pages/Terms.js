@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import ColorBack from '../components/ColorBack';
 import '../css/Terms.css'
 
@@ -6,7 +7,21 @@ import '../css/Terms.css'
 
 
 const Terms = () => {
+    const navigate = useNavigate();
+    const [isCheck, setIsCheck] = useState(false);
 
+    const handleCheck = () => {
+        setIsCheck(!isCheck)
+    }
+    const handleClick = (e) => {
+        e.preventDefault();
+        if (isCheck === true) {
+            navigate('/terms2')
+        } else {
+            navigate('/terms')
+            alert('Please, Check the box to continue')
+        }
+    }
 
     return ( 
         <div id='terms' className="contain flex-column p-0 mb-0">
@@ -20,7 +35,7 @@ const Terms = () => {
                     <h4 className='text-center my-4'>Before you finalize this transaction, take note of the following:</h4>
                     <ol>
                         <li>
-                            This phone insurance policy only indemnify (cover) the insured (you) against loss suffered by Fire Damage and Accidental Damage to the phone screen and the phone itself.
+                            This phone insurance policy only indemnifies (cover) the insured (you) against loss suffered by Fire Damage and Accidental Damage to the phone screen and the phone itself.
                         </li>
                         <li>
                             Our obligation will be to repair the phone or replace as the case may be.
@@ -36,12 +51,14 @@ const Terms = () => {
                     <input className="" 
                         type="checkbox" 
                         id="Check"
+                        checked={isCheck}
+                        onChange = {handleCheck}
                         />
                     <label className="form-check-label p-0 m-0" htmlFor="Check">
                         I understand and I agree
                     </label>
                     </div>
-                    <Link className='button btn mt-0' to='/myInsure/terms2'>Proceed</Link>
+                    <button className='button btn mt-0' onClick={handleClick}>Proceed</button>
                 </div>
                 </div>
             </div>

@@ -49,14 +49,14 @@ const Signup = () => {
     try {
         if (signUpValues.isChecked === true) {
             await register(signUpValues.email, signUpValues.password1) 
-        navigate('/myInsure/complete-profile')
+        navigate('/complete-profile')
         } else {
             setErr('Agree to myInsure Terms and Conditions to continue')
             return;
         }
     } catch (error) { 
      setErr(error.message)
-     navigate('/myInsure/signup')
+     navigate('/signup')
     }
   }
 
@@ -139,7 +139,7 @@ const Signup = () => {
                 </div>
                 <button type='submit' className='btn gen-btn'>SIGN UP</button>
                  <div className='con3 text-center mt-2'>
-                    <p>Already have an account? <Link to='/myInsure/login'>LOG IN</Link></p>
+                    <p>Already have an account? <Link to='/login'>LOG IN</Link></p>
                 </div>
             </form>
         </div>

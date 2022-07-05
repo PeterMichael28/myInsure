@@ -14,9 +14,9 @@ const Started = () => {
         try {
             await googleSignIn()
             
-            navigate('/myInsure/homepage')
+            navigate('/homepage')
         } catch (error) {
-            navigate('/myInsure/login')
+            navigate('/login')
         }
     }
     return ( 
@@ -29,7 +29,7 @@ const Started = () => {
                 <div className='con2'>
                     <Button
                         text='GET-STARTED'
-                        location='/myInsure/signup'
+                        location='/signup'
                     />
                     <a href="#/" className='google-link' onClick={handleGoogleSignIn}>
                         
@@ -38,7 +38,7 @@ const Started = () => {
                     </a>
                 </div>
                 <div className='con3 text-center mt-2'>
-                    <p>Already have an account? <Link to='/myInsure/login'>LOG IN</Link></p>
+                    <p>Already have an account? <Link to='/login'>LOG IN</Link></p>
                 </div>
             </div>
         </div>

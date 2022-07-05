@@ -1,4 +1,5 @@
-
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import ColorBack from '../components/ColorBack';
 import '../css/Terms.css'
 
@@ -6,6 +7,23 @@ import '../css/Terms.css'
 
 
 const Terms2 = () => {
+
+    const navigate = useNavigate();
+    const [isCheck, setIsCheck] = useState(false);
+
+    const handleCheck = () => {
+        setIsCheck(!isCheck)
+    }
+    const handleClick = (e) => {
+        e.preventDefault();
+        if (isCheck === true) {
+            navigate('/makepayment')
+        } else {
+            navigate('/terms2')
+            alert('Please, Check the box to continue')
+            return
+        }
+    }
 
 
     return ( 
@@ -29,13 +47,13 @@ const Terms2 = () => {
                         Wear and tear to the phone and or gradual deterioration of performance;
                         </li>
                         <li>
-                        Scratching oe other superficial damage tp the outer casings, aerials or keypads;
+                        Scratching or other superficial damage to the outer casings, aerials or keypads;
                         </li>
                         <li>
                         Any claim if the serial number, IMEI or SIMgate has been tampered with in any way or repairs carried out without prior authorization;
                         </li>
                         <li>
-                        Any loss caused deliberately caused by you;
+                        Any loss caused deliberately by you;
                         </li>
                         <li>
                         Any loss or damage to information or data or software contained in or stored on your phone
@@ -48,12 +66,14 @@ const Terms2 = () => {
                     <input className="" 
                         type="checkbox" 
                         id="Check"
+                        checked={isCheck}
+                        onChange = {handleCheck}
                         />
                     <label className="form-check-label p-0 m-0" htmlFor="Check">
                         I understand and I agree
                     </label>
                     </div>
-                    <button className='btn mt-0'>Let me pay</button>
+                    <button onClick={handleClick} className='btn mt-0'>Let me pay</button>
                 </div>
                 </div>
             </div>
