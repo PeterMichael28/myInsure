@@ -52,7 +52,8 @@ const Payment = () => {
         e.preventDefault();
         const paystack = new PaystackPop();
         paystack.newTransaction({
-            key: 'pk_live_95e502a5300783e6501c9e2366c05ff5f3c56e68',
+            key: process.env.REACT_APP_PAYSTACK_KEY,
+            // key: process.env.REACT_APP_PAYSTACK_TESTKEY,
             amount: amount * 100,
             email: data2.email,
             onSuccess(transaction) {
@@ -62,7 +63,8 @@ const Payment = () => {
             },
             onCancel() {
                 alert('You have Cancelled this transaction')
-            }
+            },
+            split_code: "SPL_KhdVpZbE2I"
         })
         // console.log(amount)
     }
@@ -80,6 +82,7 @@ const Payment = () => {
                   <div className='mb-4'>
                         <label htmlFor="firstName2" className='d-block'>First Name:</label>
                         <input type="text" id='firstName2' name='firstName2' className='m-0 px-3' defaultValue={data2.firstName} />
+                       
                     </div>
                     <div className='mb-4'>
                         <label htmlFor="email" className='d-block'>Email:</label>
@@ -87,7 +90,7 @@ const Payment = () => {
                     </div>
                   <div className='mb-4'>
                         <label htmlFor="amount" className='d-block'>Amount:</label>
-                        <input type="text" id='amount' name='amount' className='m-0 px-3' Value={amount ? amount : 'Calculating...' } />
+                        <input type="text" id='amount' name='amount' className='m-0 px-3' value={amount ? amount : 'Calculating...' } />
                     </div>
                    
                     <button className='btn-primary gen-btn' type='submit'>Make Payment</button>

@@ -13,8 +13,8 @@ import { useNavigate } from 'react-router-dom';
 const Profile = () => {
     const {user} = useUserAuth();
     const [file, setFile] = useState();
-    const [pro, setPro] = useState(null);
-    const navigate = useNavigate()
+    const [pro, setPro] = useState(0);
+    const navigate = useNavigate();
     const [profile, setProfile] = useState({
         firstName: '',
         lastName: '',
@@ -82,7 +82,16 @@ const Profile = () => {
 
 
     const addData = async (e) => {
-        e.preventDefault()
+        e.preventDefault();
+        if (profile.img === '') {
+            console.log(profile)
+            alert('please select a picture')
+            return
+        }
+        if (profile.gender === 'select gender') {
+            alert('please select a gender')
+            return
+        }
         // console.log(profile)
         await setDoc(doc(db, "insured", user.uid), {
           ...profile,
@@ -93,7 +102,7 @@ const Profile = () => {
 
     return ( 
         <div id='' className='contain'>
-        <Back />
+        {/* <Back /> */}
         <div className='Signup'>
             <div className='login-title profile-title'>
                 <h1>Set up your profile with <span className='orange'>US</span></h1>
@@ -186,6 +195,7 @@ const Profile = () => {
                     {/* <label htmlFor="img" className="form-control m-0 mb-1 d-flex justify-content-between align-items-center file-input">
                         Upload picture   */}
                         <input type="file" className="d-non form-control" id="img" placeholder='Upload Picture' name='img' onChange={(e) => setFile(e.target.files[0])} required accept='image/*'/>
+                        <small className={pro < 100 ? 'upload-text-loading' : 'upload-text-done'}>{pro ? `Upload is ${pro} % done` : 'start upload'}</small>
                         {/* <img src={Logo} alt="file" className='' /> */}
                     {/* </label> */}
                    

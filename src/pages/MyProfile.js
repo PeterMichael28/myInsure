@@ -52,31 +52,31 @@ const MyProfile = () => {
                     <div className="profile-details">
                         <div className="det">
                             <span>Name</span>
-                            <h2>{`${data.firstName} ${data.lastName}`}</h2>
+                            <h2>{data.firstName === undefined || data.lastName === undefined ? 'loading...' : `${data.firstName} ${data.lastName}`}</h2>
                         </div>
                         <div className="det">
                             <span>Address</span>
-                            <h2>{data.address}</h2>
+                            <h2>{data && data.address}</h2>
                         </div>
                         <div className="det">
                             <span>Phone Number</span>
-                            <h2>{data.phone}</h2>
+                            <h2>{data && data.phone}</h2>
                         </div>
                         <div className="det">
                             <span>Occupation</span>
-                            <h2>{data.occupation}</h2>
+                            <h2>{data && data.occupation}</h2>
                         </div>
                         <div className="det">
                             <span>Email Address</span>
-                            <h2>{data.email}</h2>
+                            <h2>{data && data.email}</h2>
                         </div>
                         <div className="det">
                             <span>Means of Identification</span>
-                            <h2>{data.meansOfId}</h2>
+                            <h2>{data && data.meansOfId}</h2>
                         </div>
                         <div className="det">
                             <span>Identity No.</span>
-                            <h2>{data.idNum}</h2>
+                            <h2>{data && data.idNum}</h2>
                         </div>
                     </div>
                 </div>
@@ -87,7 +87,7 @@ const MyProfile = () => {
                         <tbody>
                         <tr>
                             <td className='key'>Phone brand</td>
-                            <td className='value'>{data &&( data.phoneBrand + ' ' + data.phoneModel)}</td>
+                            <td className='value'>{data.phoneBrand === undefined || data.phoneModel === undefined ? '' : (data.phoneBrand + ' ' + data.phoneModel)}</td>
                         </tr>
                         <tr>
                             <td className='key'>IMEI Number</td>

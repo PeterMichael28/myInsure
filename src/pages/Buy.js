@@ -103,11 +103,15 @@ const Buy = () => {
         alert('Please, Check the box to continue')
         return
     }
+    if (buyDetails.img2 === '') {
+        alert('Please, upload the screenshot you made as stated above')
+        return
+    }
         await updateDoc(doc(db, "insured", user.uid), {
           ...buyDetails
           });
           navigate('/terms')
-    console.log(buyDetails)
+    // console.log(buyDetails)
     } 
     const insureValue = Math.round((buyDetails.phoneValue * 0.04) * 100) / 100;
     // const naira ='&#8358;'
@@ -127,14 +131,15 @@ const Buy = () => {
                         <h1 className='text-center'>INSTRUCTIONS</h1>
                         <h5>Follow the following set of instructions to buy your policy </h5>
                         <ol>
-                            <li>Follow this link to get the current value of your phone with your IMEI number</li>
+                            <li>Go to <a href="www.slot.ng" className=''>Slot.ng</a></li>
+                            <li>Search for your phone with the phone name</li>
                             <li>Take a screenshot of the page showing the current price of your phone and the phone name</li>
                             <li>Upload the screenshot you made above</li>
                             <li>Enter the value of your phone, the phone model, the phone brand as in the screenshot above, the the year of purchase and the condition of the phone</li>
                         </ol>
                     </div>
                     <div className='disclaimer p-2'>
-                        <h1 className='text-center'>**Disclaimer**</h1>
+                        <h1 className='text-center'>**WARNING**</h1>
                         <h5>If there's a difference between the price you entered and the price on the screenshot, your insurance will be invalid and the money paid is non-refundable</h5>
                     </div>
                     <div className='mb-2'>
@@ -146,10 +151,12 @@ const Buy = () => {
                         <div className="input-div">
                         <input type="file" required accept='image/*' id='img2' name='img2' onChange={(e) => setFile2(e.target.files[0])}/>
                         </div>
+                        <small className={prog < 100 ? 'upload-text-loading' : 'upload-text-done'}>{prog ? `Upload is ${prog} % done` : 'start upload'}</small>
                     </div>
                     <div className='mb-2'>
                         <label htmlFor="phoneValue" className='d-block'>Phone Value <small>(As it is on the screenshot)</small></label>
                         <input type="tel" id='phoneValue' name='phoneValue' className='m-0' onChange={handleChange} value={buyDetails.phoneValue} />
+                       
                     </div>
                     <div className='mb-2'>
                         <label htmlFor="phoneBrand" className='d-block'>Phone Brand</label>

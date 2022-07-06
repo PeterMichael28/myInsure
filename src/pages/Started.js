@@ -14,9 +14,9 @@ const Started = () => {
         try {
             await googleSignIn()
             
-            navigate('/homepage')
+            navigate('/complete-profile')
         } catch (error) {
-            navigate('/login')
+            navigate('/signup')
         }
     }
     return ( 
@@ -34,7 +34,7 @@ const Started = () => {
                     <a href="#/" className='google-link' onClick={handleGoogleSignIn}>
                         
                         <img className='google-logo' src={Google} alt="Google-logo" />
-                        Continue With Google
+                        Sign Up With Google
                     </a>
                 </div>
                 <div className='con3 text-center mt-2'>

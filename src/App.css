@@ -133,3 +133,14 @@ label {
     border: none;
     outline: none;
 }
+
+.upload-text-loading {
+    color: crimson;
+    font-size: .8rem;
+
+}
+.upload-text-done {
+    color: green;
+    font-size: .9rem;
+
+}

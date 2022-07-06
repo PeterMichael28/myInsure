@@ -47,7 +47,7 @@ const Dashboard = () => {
         <div className="dashboard contain flex-column align-items-start pt-2 pb-2 px-5">
             <div className="dash-text mt-3">
                 <h1>Hi,</h1>
-                <h1>{data.firstName}</h1>
+                <h1>{data.firstName ? data.firstName : 'loading...'}</h1>
                 <p>Your Dashboard</p>
                 {/* <button onClick={signOut}>LogOut</button> */}
             </div>
@@ -79,10 +79,12 @@ const Dashboard = () => {
                 </div>
 
                 <div className="dash-right">
-                    <div className="dash_days d-flex align-items-center justify-content-center">
-                        <img src={customericon} alt="icon" />
-                        <h1>Customer Supports</h1>
-                    </div>
+                    <a href="http://www.myinsure.com.ng/customer-support">
+                        <div className="dash_days d-flex align-items-center justify-content-center">
+                            <img src={customericon} alt="icon" />
+                            <h1>Customer Supports</h1>
+                        </div>
+                    </a>
                     <Link to='/buy'>
                     <div className="dash_buy dash">
                         <h3>Buy</h3>

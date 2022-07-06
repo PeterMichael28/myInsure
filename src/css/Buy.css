@@ -19,15 +19,18 @@
     top: -45px;
 }
 
-#buy .instructions,
-#buy .disclaimer {
+#buy .instructions{
     font-size: .7rem;
     color: rgba(255, 218, 175, 1);
+}
+#buy .disclaimer {
+    color: crimson;
+    font-size: .8rem;
 }
 
 #buy .instructions h5,
 #buy .disclaimer h5 {
-    font-size: .8rem;
+    font-size: .7rem;
 }
 
 #buy .instructions h1,
