@@ -7,6 +7,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from '../firebase-config'
 import { useEffect } from 'react'
 import { useState } from 'react'
+import { db2 } from '../firebase-config2';
 
 const MyProfile = () => {
 
@@ -14,6 +15,7 @@ const MyProfile = () => {
 
     const {user} = useUserAuth();
     const [data, setData] = useState({})
+    const [data2, setData2] = useState({})
     useEffect(() => {
         const fetchData = async () => {
             const docRef = await doc(db, "insured", user.uid);
@@ -30,6 +32,24 @@ const MyProfile = () => {
             // console.log(docSnap)
         }
         fetchData()
+    }, [user.uid])
+
+    useEffect(() => {
+        const fetchData2 = async () => {
+            const docRef = await doc(db2, "insured", user.uid);
+            const docSnap = await getDoc(docRef);
+
+            if (docSnap.exists()) {
+                // console.log("Document data:", docSnap.data());
+                setData2(docSnap.data())
+              } else {
+                // doc.data() will be undefined in this case
+                // console.log("No such document!");
+                setData2(undefined)
+              }
+            // console.log(docSnap)
+        }
+        fetchData2()
     }, [user.uid])
 
 
@@ -86,16 +106,20 @@ const MyProfile = () => {
                     <table>
                         <tbody>
                         <tr>
-                            <td className='key'>Phone brand</td>
+                            <td className='key'>Policy Number:</td>
+                            <td className='value'>{data2 ? data2.PolicyNo : ''}</td>
+                        </tr>
+                        <tr>
+                            <td className='key'>Phone brand:</td>
                             <td className='value'>{data.phoneBrand === undefined || data.phoneModel === undefined ? '' : (data.phoneBrand + ' ' + data.phoneModel)}</td>
                         </tr>
                         <tr>
-                            <td className='key'>IMEI Number</td>
+                            <td className='key'>IMEI Number:</td>
                             <td className='value'>{data && data.imeiNo}</td>
                         </tr>
                         <tr>
-                            <td className='key'>Policy No</td>
-                            <td className='value'>4444656555555544443</td>
+                            <td className='key'>Payment Status:</td>
+                            <td className='value'>{data.payment === undefined ? 'Not Paid' : data.payment}</td>
                         </tr>
                         </tbody>
                       

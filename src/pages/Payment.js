@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ColorBack from '../components/ColorBack';
 import { useUserAuth } from '../Context/UserAuth'
-import { doc, getDoc } from "firebase/firestore";
+import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { db } from '../firebase-config'
 import '../css/Payment.css'
 import PaystackPop from '@paystack/inline-js'
@@ -18,6 +18,7 @@ const Payment = () => {
     const {user} = useUserAuth();
     const [data2, setData2] = useState({})
     const [amount, setAmount] = useState()
+
     useEffect(() => {
         const fetchData2 = async () => {
             const docRef = await doc(db, "insured", user.uid);
@@ -43,21 +44,25 @@ const Payment = () => {
 
     }, [amount])
 
-    // const handlechange = (e) => {
-    //     setAmount(e.target.value)
-    // }
-    
-
+        const addPayment = async () => {
+            await updateDoc(doc(db, "insured", user.uid), {
+                payment: 'Paid',
+                amountPaid: amount
+            });
+        }
     const makePay = (e) => {
         e.preventDefault();
         const paystack = new PaystackPop();
+
         paystack.newTransaction({
             key: process.env.REACT_APP_PAYSTACK_KEY,
             // key: process.env.REACT_APP_PAYSTACK_TESTKEY,
             amount: amount * 100,
             email: data2.email,
+
             onSuccess(transaction) {
                 let message = `Thank You, Payment Completed! Reference ${transaction.reference}`
+                addPayment()
                 alert(message)
                 navigate('/homepage')
             },
@@ -66,7 +71,7 @@ const Payment = () => {
             },
             split_code: "SPL_KhdVpZbE2I"
         })
-        // console.log(amount)
+        console.log(amount)
     }
 
 
@@ -81,7 +86,7 @@ const Payment = () => {
                   <form onSubmit={makePay}>
                   <div className='mb-4'>
                         <label htmlFor="firstName2" className='d-block'>First Name:</label>
-                        <input type="text" id='firstName2' name='firstName2' className='m-0 px-3' defaultValue={data2.firstName} />
+                        <input type="text" id='firstName2' name='firstName2' className='m-0 px-3'  defaultValue={data2.firstName} />
                        
                     </div>
                     <div className='mb-4'>
@@ -90,7 +95,7 @@ const Payment = () => {
                     </div>
                   <div className='mb-4'>
                         <label htmlFor="amount" className='d-block'>Amount:</label>
-                        <input type="text" id='amount' name='amount' className='m-0 px-3' value={amount ? amount : 'Calculating...' } />
+                        <input type="text" id='amount' name='amount' className='m-0 px-3' defaultValue={amount ? amount : 'Calculating...' } />
                     </div>
                    
                     <button className='btn-primary gen-btn' type='submit'>Make Payment</button>

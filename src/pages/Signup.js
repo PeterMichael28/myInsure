@@ -49,7 +49,8 @@ const Signup = () => {
     try {
         if (signUpValues.isChecked === true) {
             await register(signUpValues.email, signUpValues.password1) 
-        navigate('/complete-profile')
+            navigate('/complete-profile')
+            alert('Registration Successful!!!')
         } else {
             setErr('Agree to myInsure Terms and Conditions to continue')
             return;

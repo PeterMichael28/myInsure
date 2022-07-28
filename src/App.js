@@ -41,6 +41,7 @@ const RequireAuth = ({children}) => {
         <Route path='/terms' element={<RequireAuth><Terms /></RequireAuth>}></Route>
         <Route path='/terms2' element={<RequireAuth><Terms2 /></RequireAuth>}></Route>
         <Route path='/makepayment' element={<RequireAuth><Payment /></RequireAuth>}></Route>
+        
       </Routes>
     </Router>
   );

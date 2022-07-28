@@ -131,7 +131,7 @@ const Buy = () => {
                         <h1 className='text-center'>INSTRUCTIONS</h1>
                         <h5>Follow the following set of instructions to buy your policy </h5>
                         <ol>
-                            <li>Go to <a href="www.slot.ng" className=''>Slot.ng</a></li>
+                            <li>Go to <a href="https://www.slot.ng" className=''>Slot.ng</a></li>
                             <li>Search for your phone with the phone name</li>
                             <li>Take a screenshot of the page showing the current price of your phone and the phone name</li>
                             <li>Upload the screenshot you made above</li>

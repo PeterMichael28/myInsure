@@ -47,7 +47,7 @@ const Dashboard = () => {
         <div className="dashboard contain flex-column align-items-start pt-2 pb-2 px-5">
             <div className="dash-text mt-3">
                 <h1>Hi,</h1>
-                <h1>{data.firstName ? data.firstName : 'loading...'}</h1>
+                <h1>{data ? data.firstName : 'loading...'}</h1>
                 <p>Your Dashboard</p>
                 {/* <button onClick={signOut}>LogOut</button> */}
             </div>

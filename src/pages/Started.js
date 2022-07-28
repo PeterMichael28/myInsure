@@ -13,8 +13,8 @@ const Started = () => {
         e.preventDefault();
         try {
             await googleSignIn()
-            
             navigate('/complete-profile')
+            alert('Registration Successful!!!')
         } catch (error) {
             navigate('/signup')
         }

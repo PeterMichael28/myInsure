@@ -34,6 +34,7 @@ const Login = () => {
       try {
         await loginIn(login.loginEmail, login.loginPass) 
         navigate('/homepage')
+        alert('Login Successful!!!')
       } catch (error) {
         setloginErr(error.message)
         navigate('/login')
@@ -59,8 +60,8 @@ const Login = () => {
       e.preventDefault();
       try {
           await googleSignIn()
-          
           navigate('/homepage')
+          alert('Login Successful!!!')
       } catch (error) {
           navigate('/login')
       }
@@ -68,7 +69,7 @@ const Login = () => {
   
     const passToggle = () => {
         setPassDis(!passDis)
-        console.log('show')
+        // console.log('show')
     }
     const handleClick = () => {
         navigate('/getting-started')
