@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ColorBack from '../components/ColorBack';
 import { useUserAuth } from '../Context/UserAuth'
-import { doc, getDoc, updateDoc } from "firebase/firestore";
+import { doc, getDoc, serverTimestamp, updateDoc } from "firebase/firestore";
 import { db } from '../firebase-config'
 import '../css/Payment.css'
 import PaystackPop from '@paystack/inline-js'
@@ -47,7 +47,8 @@ const Payment = () => {
         const addPayment = async () => {
             await updateDoc(doc(db, "insured", user.uid), {
                 payment: 'Paid',
-                amountPaid: amount
+                amountPaid: amount,
+                paymentTime: serverTimestamp()
             });
         }
     const makePay = (e) => {
@@ -71,7 +72,7 @@ const Payment = () => {
             },
             split_code: "SPL_KhdVpZbE2I"
         })
-        console.log(amount)
+        // console.log(amount)
     }
 
 

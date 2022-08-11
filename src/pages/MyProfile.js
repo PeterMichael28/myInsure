@@ -107,7 +107,7 @@ const MyProfile = () => {
                         <tbody>
                         <tr>
                             <td className='key'>Policy Number:</td>
-                            <td className='value'>{data2 ? data2.PolicyNo : ''}</td>
+                            <td className='value'>{data2 && data2.PolicyNo ? data2.PolicyNo : 'No Policy number yet'}</td>
                         </tr>
                         <tr>
                             <td className='key'>Phone brand:</td>
@@ -126,12 +126,12 @@ const MyProfile = () => {
                     </table>
                 </div>
                 <div className='make-claim d-flex align-items-center justify-content-center mb-3 pb-0'>
-                    <Link to='/homepage' className='d-flex align-items-center justify-content-between' >
+                    <a href={data2?.CertImg} className='d-flex align-items-center justify-content-between' >
                         Your Insurance Certificate 
                         <div className='link-arrow d-flex align-items-center justify-content-center'>
                             <img src={Arrow} alt="#" />
                         </div>
-                    </Link>
+                    </a>
                 </div>
             </div>
         </div>
