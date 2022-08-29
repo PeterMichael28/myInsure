@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import Logo from '../assets/MyInsureLogo..png'
+import Logo from '../assets/logo2.png'
 import Back from '../components/Back';
 import '../css/Signup.css'
 import '../css/Profile.css'

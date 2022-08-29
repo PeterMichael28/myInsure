@@ -1,5 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
-import Logo from '../assets/MyInsureLogo..png'
+import Logo from '../assets/logo2.png'
 import Google from '../assets/Google-logo.png'
 import Button from '../components/Buttons';
 import '../css/Started.css';
@@ -8,6 +8,8 @@ import { useUserAuth } from '../Context/UserAuth';
 const Started = () => {
     const { googleSignIn } = useUserAuth()
     const navigate = useNavigate();
+    const {user} = useUserAuth();
+
 
     const handleGoogleSignIn = async (e) => {
         e.preventDefault();
@@ -38,7 +40,10 @@ const Started = () => {
                     </a>
                 </div>
                 <div className='con3 text-center mt-2'>
-                    <p>Already have an account? <Link to='/login'>LOG IN</Link></p>
+                    <p>Already have an account?
+                         <Link to='/login'>LOG IN</Link>
+                         {/* <span className='px-1' onClick={handleClick}>Login</span> */}
+                         </p>
                 </div>
             </div>
         </div>

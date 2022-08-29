@@ -92,12 +92,14 @@ const Profile = () => {
             alert('please select a gender')
             return
         }
-        // console.log(profile)
+        console.log(profile)
         await setDoc(doc(db, "insured", user.uid), {
           ...profile,
           timeStamp: serverTimestamp()
           });
           navigate('/homepage')
+
+        // console.log(profile)
     } 
 
     return ( 

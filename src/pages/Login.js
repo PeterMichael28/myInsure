@@ -1,11 +1,14 @@
-import { useState } from 'react';
+
 import { Link, useNavigate } from 'react-router-dom';
-import Logo from '../assets/MyInsureLogo..png'
+import Logo from '../assets/logo2.png'
 import back from '../assets/arrow-back.png'
 import Inputs from '../components/Inputs';
 import '../css/Login.css'
 import { useUserAuth } from '../Context/UserAuth';
+import { doc, getDoc } from "firebase/firestore";
+import { db } from '../firebase-config'
 import Google from '../assets/Google-logo.png'
+import { useState, useEffect } from 'react'
 
 const Login = () => {
     const [passDis, setPassDis] = useState(true);
@@ -13,7 +16,37 @@ const Login = () => {
     const [loginerr, setloginErr] = useState('')
     const { loginIn, resetPass, googleSignIn } = useUserAuth()
     const navigate = useNavigate();
+    const { user } = useUserAuth();
+    const [data, setData] = useState([])
+
+
   
+    useEffect(() => {
+      const fetchData = async () => {
+          const docRef = await doc(db, "insured", user.uid);
+          const docSnap = await getDoc(docRef);
+
+          if (docSnap.exists()) {
+              // console.log("Document data:", docSnap.data());
+              setData(docSnap.data())
+            } else {
+              // doc.data() will be undefined in this case
+              // console.log("No such document!");
+              setData(undefined)
+            }
+      }
+     user && fetchData()
+  }, [user])
+
+  useEffect(() => {
+    if (user && data !== undefined) {
+       navigate('/homepage')
+       alert('Welcome Back!!!')
+      }
+  }, [data])
+
+
+
     const [login, setLogin] = useState({
       loginEmail: '',
       loginPass: ''
@@ -28,18 +61,21 @@ const Login = () => {
   const loginValues = { ...login}
   
    
-  
     const loggingIn = async (e) => {
       e.preventDefault();
       try {
+       
         await loginIn(login.loginEmail, login.loginPass) 
-        navigate('/homepage')
-        alert('Login Successful!!!')
-      } catch (error) {
+        if (data) {
+          navigate('/homepage')
+          alert('Welcome Back!!!')
+        } else {
+          navigate('/complete-profile')
+          alert('Welcome, Please complete your profile to continue')
+      } }
+      catch (error) {
         setloginErr(error.message)
         navigate('/login')
-  
-  
       }
     }
 
@@ -60,8 +96,13 @@ const Login = () => {
       e.preventDefault();
       try {
           await googleSignIn()
-          navigate('/homepage')
-          alert('Login Successful!!!')
+          if (data === undefined) {
+            navigate('/complete-profile')
+            alert('Welcome, Please complete your profile to continue')
+          } else {
+            navigate('/homepage')
+            alert('Welcome Back!!!')
+          }
       } catch (error) {
           navigate('/login')
       }

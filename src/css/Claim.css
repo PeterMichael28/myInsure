@@ -1,5 +1,5 @@
 #my-claims .top-bg {
-    height: 55vh;
+    height: 57vh;
     background: rgba(9, 122, 224, 0.3);
 }
 #my-claims .top-bg h1 {
@@ -9,17 +9,17 @@
     margin-top: 3.6rem;
 }
 #my-claims .bottom-bg {
-    height: 73vh;
+    height: 78vh;
     border-top-left-radius: 57px;
     border-top-right-radius: 57px;
     background: #F3F3F1;
     position: relative;
-    top: -55px;
+    top: -40px;
 }
 #my-claims .profile-con {
     width: 90%;
     position: absolute;
-    top: -45%;
+    top: -46%;
     height: auto;
     left: 20px;
     background: rgba(9, 122, 224, 0.71);    
