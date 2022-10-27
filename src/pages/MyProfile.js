@@ -16,6 +16,8 @@ const MyProfile = () => {
     const {user} = useUserAuth();
     const [data, setData] = useState({})
     const [data2, setData2] = useState({})
+
+    
     useEffect(() => {
         const fetchData = async () => {
             const docRef = await doc(db, "insured", user.uid);

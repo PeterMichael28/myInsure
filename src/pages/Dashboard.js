@@ -58,7 +58,7 @@ const Dashboard = () => {
                 <p>Your Dashboard</p>
                 </div>
                 <Link to='/myprofile' className='dash-text-img'>
-                    <img className='h-100 w-100' src={data.img} alt="img" />
+                    <img className='h-100 w-100' src={data.img && data.img} alt="img" />
                 </Link>
                 {/* <button onClick={signOut}>LogOut</button> */}
             </div>

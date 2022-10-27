@@ -131,30 +131,27 @@ const Buy = () => {
                         <h1 className='text-center'>INSTRUCTIONS</h1>
                         <h5>Follow the following set of instructions to buy your policy </h5>
                         <ol>
-                            <li>Go to <a href="https://www.slot.ng" className=''>Slot.ng</a></li>
-                            <li>Search for your phone with the phone name</li>
-                            <li>Take a screenshot of the page showing the current price of your phone and the phone name</li>
-                            <li>Upload the screenshot you made above</li>
-                            <li>Enter the value of your phone, the phone model, the phone brand as in the screenshot above, the the year of purchase and the condition of the phone</li>
+                            <li>Upload the picture of your phone receipt</li>
+                            <li>Enter your phone IMEI, the value of your phone, the phone model, the phone brand as in the screenshot above, the the year of purchase and the condition of the phone</li>
                         </ol>
                     </div>
-                    <div className='disclaimer p-2'>
+                    {/* <div className='disclaimer p-2'>
                         <h1 className='text-center'>**WARNING**</h1>
                         <h5>If there's a difference between the price you entered and the price on the screenshot, your insurance will be invalid and the money paid is non-refundable</h5>
-                    </div>
+                    </div> */}
                     <div className='mb-2'>
                         <label htmlFor="imeiNo" className='d-block'>IMEI No <small>(Dial *#06# to check your IMEI number)</small></label>
                         <input type="tel" id='imeiNo' name='imeiNo' className='m-0' onChange={handleChange} value={buyDetails.imeiNo} placeholder='15 digits IMEI number' />
                     </div>
                     <div className='mb-2'>
-                        <label htmlFor="img2">Upload The Screenshot</label>
+                        <label htmlFor="img2">Upload Your Phone Receipt</label>
                         <div className="input-div">
                         <input type="file" required accept='image/*' id='img2' name='img2' onChange={(e) => setFile2(e.target.files[0])}/>
                         </div>
                         <small className={prog < 100 ? 'upload-text-loading' : 'upload-text-done'}>{prog ? `Upload is ${prog} % done` : 'start upload'}</small>
                     </div>
                     <div className='mb-2'>
-                        <label htmlFor="phoneValue" className='d-block'>Phone Value <small>(As it is on the screenshot)</small></label>
+                        <label htmlFor="phoneValue" className='d-block'>Phone Price <small>(As it is on the receipt)</small></label>
                         <input type="tel" id='phoneValue' name='phoneValue' className='m-0' onChange={handleChange} value={buyDetails.phoneValue} />
                        
                     </div>
@@ -187,7 +184,7 @@ const Buy = () => {
                 </div>
                 
             </div>
-            <div className='make-claim mt-3 mb-4 pb-2 d-flex flex-column align-items-center justify-content-center'>
+            <div className='make-claim mt-2 mb-4 pb-2 d-flex flex-column align-items-center justify-content-center'>
             <div className="p-3 d-flex">
                     <input className="" 
                         type="checkbox" 

@@ -1,7 +1,7 @@
 
 
 #buy .top-bg {
-    height: 85vh;
+    height: 75vh;
     background: rgba(9, 122, 224, 0.3);
 }
 #buy .top-bg h1 {
@@ -41,7 +41,7 @@
 #buy .profile-con {
     width: 90%;
     position: absolute;
-    top: -53%;
+    top: -43%;
     height: auto;
     left: 20px;
     background: rgba(9, 122, 224, 0.71);    
@@ -60,7 +60,7 @@
     height: auto;
     background: rgba(255, 218, 175, 0.33);
     border-radius: 31px;
-    margin-top: 1.5rem;
+    /* margin-top: 1rem; */
 }
 #buy .phone-details h3 {
     color: #097AE0;

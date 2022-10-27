@@ -17,7 +17,27 @@ const Payment = () => {
 
     const {user} = useUserAuth();
     const [data2, setData2] = useState({})
-    const [amount, setAmount] = useState()
+    const [ amount, setAmount ] = useState()
+    const [data, setData] = useState({});
+
+      useEffect(() => {
+       const fetchData = async () => {
+        const docRef = await doc(db, "insured", user.uid);
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+         // console.log("Document data:", docSnap.data());
+         setData(docSnap.data());
+        } else {
+         // doc.data() will be undefined in this case
+         // console.log("No such document!");
+         setData(undefined);
+        }
+        // console.log(docSnap)
+       };
+       fetchData();
+      }, [user.uid] );
+    
 
     useEffect(() => {
         const fetchData2 = async () => {
@@ -44,7 +64,8 @@ const Payment = () => {
 
     }, [amount])
 
-        const addPayment = async () => {
+    const addPayment = async () => {
+
             await updateDoc(doc(db, "insured", user.uid), {
                 payment: 'Paid',
                 amountPaid: amount,
