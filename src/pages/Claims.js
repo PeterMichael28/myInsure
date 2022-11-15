@@ -1,8 +1,8 @@
 import ColorBack from '../components/ColorBack';
 import '../css/Claim.css'
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useUserAuth } from '../Context/UserAuth';
-import { doc, updateDoc, serverTimestamp, setDoc } from "firebase/firestore";
+import { doc, serverTimestamp, setDoc } from "firebase/firestore";
 import { db, storage } from '../firebase-config'; 
 import { useEffect, useState } from 'react';
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
@@ -11,72 +11,92 @@ import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
 const Claims = () => {
     const { user} = useUserAuth();
-    const [ file, setFile ] = useState( '' );
+    const [ files, setFiles ] = useState([]);
     const navigate = useNavigate();
+    const [urls, setUrls] = useState([])
  const [claimDetails, setclaimDetails] = useState({
     policyNo: '',
-    claimImg: '',
     whatHappened: '',
 })
 // const navigate = useNavigate();
 const [prog, setProg] = useState(null);
 const [isChecks, setIsChecks] = useState(false);
 
- useEffect(() => {
-    const upload2 = () => {
-        const name = new Date().getTime() + file.name
-        const storageRef = ref(storage, file.name);
-        const uploadTask = uploadBytesResumable(storageRef, file);
-
-    uploadTask.on('state_changed', 
-    (snapshot) => {
-        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        setProg(progress)
-        // console.log('Upload is ' + prog + '% done');
-        switch (snapshot.state) {
-        case 'paused':
-            // console.log('Upload is paused');
-            break;
-        case 'running':
-            // console.log('Upload is running');
-            break;
-            default:
-            break;
-        }
-    }, 
-    (error) => {
-       console.log(error)
-    }, 
-    () => {
-        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-      setclaimDetails( () => ({
-       ...claimDetails,
-      claimImg: downloadURL,
-      
-      }))
-    //   console.log(downloadURL)
-      
-        });
-        // console.log(profile)
+    
+  //handling the file inputs  
+    
+const handleFile = (e) => {
+    for ( let i = 0; i < e.target.files.length; i++ ) {
+        let newImages = e.target.files[i];
+        newImages[ 'id' ] = Math.random();
+        setFiles( (pre) => [...pre, newImages] )
+        
     }
-    );
     }
-    file && upload2()
-}, [file])
+  
+    useEffect( () => {
+     
+        const promises = [];
+    
+        // mapping through the file arrays and uploading each file on firestore storage
+        files.map( ( file ) => {
+            const name = new Date().getTime() + file.name;
+            const storageRef = ref( storage, file.name );
+            const uploadTask = uploadBytesResumable( storageRef, file );
+            
+            promises.push( uploadTask );
+            uploadTask.on( 'state_changed',
+                ( snapshot ) => {
+                    const progress = ( snapshot.bytesTransferred / snapshot.totalBytes ) * 100;
+                    setProg( progress );
+                    // console.log('Upload is ' + prog + '% done');
+                    switch ( snapshot.state ) {
+                        case 'paused':
+                            // console.log('Upload is paused');
+                            break;
+                        case 'running':
+                            // console.log('Upload is running');
+                            break;
+                        default:
+                            break;
+                    }
+                },
+                ( error ) => {
+                    console.log( error );
+                },
+                // getting the url of the uploaded images and passing it to our claimDetails
+              () => {
+                 getDownloadURL( uploadTask.snapshot.ref ).then( ( downloadURL ) => {
+                       setUrls( ( pre ) => [ ...pre, downloadURL ] );
+                          
+                        } );
+                }
+            );
+        } )
+        
+}, [files])
 
 
+    
+
+    //handling other text inputs
 let handleChange = (e) => {
     setclaimDetails({
         ...claimDetails,
         [e.target.name]: e.target.value,
       })
   }
+
+    //handling the check input
   const handleChecks = () => {
     setIsChecks(!isChecks)
-}
+    }
+    
+
+    //onSubmit function
 
   const addData2 = async (e) => {
-    if (claimDetails.claimImg === '') {
+    if (urls === []) {
         alert('Please, upload the Picture of the damaged Phone')
         return
     }
@@ -91,10 +111,14 @@ let handleChange = (e) => {
     if (isChecks !== true) {
         alert('Please, Check the box to continue')
         return
-    }
+      }
+      
+      
+
       await setDoc(doc(db, "insured", user.uid), {
           ...claimDetails,
-          ClaimstimeStamp: serverTimestamp()
+          ClaimstimeStamp: serverTimestamp(),
+          claimImgs: urls
       }, { merge: true } );
       
       alert( 'Claim Successfully Submitted. We will get back to you shortly' )
@@ -122,7 +146,7 @@ let handleChange = (e) => {
                     <div className='mb-2'>
                         <label htmlFor="img2">Attached Picture of the damaged Phone <br/> <span className='label-span'>(You can upload up to 4 images at once)</span> </label>
                         <div className="input-div">
-                        <input type="file" required accept='image/*' id='img2' multiple name='img2' onChange={(e) => setFile(e.target.files[0])}/>
+                        <input type="file" required accept='image/*' id='img2' multiple name='img2' onChange={handleFile}/>
                         </div>
                         <small className={prog < 100 ? 'upload-text-loading' : 'upload-text-done'}>{prog ? `Upload is ${prog} % done` : 'start upload'}</small>
                     </div>
