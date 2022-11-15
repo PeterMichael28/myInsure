@@ -84,7 +84,7 @@ const Profile = () => {
     const addData = async (e) => {
         e.preventDefault();
         if (profile.img === '') {
-            console.log(profile)
+            // console.log(profile)
             alert('please select a picture')
             return
         }

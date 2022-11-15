@@ -1,5 +1,5 @@
 #my-claims .top-bg {
-    height: 57vh;
+    height: 59vh;
     background: rgba(9, 122, 224, 0.3);
 }
 #my-claims .top-bg h1 {
@@ -9,7 +9,7 @@
     margin-top: 3.6rem;
 }
 #my-claims .bottom-bg {
-    height: 78vh;
+    height: 80vh;
     border-top-left-radius: 57px;
     border-top-right-radius: 57px;
     background: #F3F3F1;
@@ -19,7 +19,7 @@
 #my-claims .profile-con {
     width: 90%;
     position: absolute;
-    top: -46%;
+    top: -48%;
     height: auto;
     left: 20px;
     background: rgba(9, 122, 224, 0.71);    
@@ -30,6 +30,7 @@
     height: auto;
     background: rgba(255, 218, 175, 0.33);
     border-radius: 31px;
+   
 }
 #my-claims .make-claim input {
     margin-right: 10px;
@@ -39,6 +40,11 @@
 .make-claim label {
    font-size: 13px;
    color: #F1851A;
+}
+
+ .label-span {
+    font-size: 11px;
+    margin-bottom: 10px;
 }
 .make-claim h1 {
     font-weight: 700;

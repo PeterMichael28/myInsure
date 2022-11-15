@@ -1,17 +1,18 @@
 import ColorBack from '../components/ColorBack';
 import '../css/Claim.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useUserAuth } from '../Context/UserAuth';
-import { doc, updateDoc } from "firebase/firestore";
+import { doc, updateDoc, serverTimestamp, setDoc } from "firebase/firestore";
 import { db, storage } from '../firebase-config'; 
-import { useEffect, useState, useNavigate } from 'react';
+import { useEffect, useState } from 'react';
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
 
 
 const Claims = () => {
     const { user} = useUserAuth();
- const [file, setFile] = useState('');
+    const [ file, setFile ] = useState( '' );
+    const navigate = useNavigate();
  const [claimDetails, setclaimDetails] = useState({
     policyNo: '',
     claimImg: '',
@@ -91,9 +92,13 @@ let handleChange = (e) => {
         alert('Please, Check the box to continue')
         return
     }
-      await updateDoc(doc(db, "insured", user.uid), {
-        ...claimDetails
-        });
+      await setDoc(doc(db, "insured", user.uid), {
+          ...claimDetails,
+          ClaimstimeStamp: serverTimestamp()
+      }, { merge: true } );
+      
+      alert( 'Claim Successfully Submitted. We will get back to you shortly' )
+      navigate('/homepage')
 //   console.log(claimDetails)
   } 
     return ( 
@@ -115,9 +120,9 @@ let handleChange = (e) => {
                     </div>
 
                     <div className='mb-2'>
-                        <label htmlFor="img2">Attached Picture of the damaged Phone</label>
+                        <label htmlFor="img2">Attached Picture of the damaged Phone <br/> <span className='label-span'>(You can upload up to 4 images at once)</span> </label>
                         <div className="input-div">
-                        <input type="file" required accept='image/*' id='img2' name='img2' onChange={(e) => setFile(e.target.files[0])}/>
+                        <input type="file" required accept='image/*' id='img2' multiple name='img2' onChange={(e) => setFile(e.target.files[0])}/>
                         </div>
                         <small className={prog < 100 ? 'upload-text-loading' : 'upload-text-done'}>{prog ? `Upload is ${prog} % done` : 'start upload'}</small>
                     </div>
