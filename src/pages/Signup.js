@@ -48,7 +48,7 @@ const Signup = () => {
 
     try {
         if (signUpValues.isChecked === true) {
-            await register(signUpValues.email, signUpValues.password1) 
+           await register(signUpValues.email, signUpValues.password1)
             navigate('/complete-profile')
             alert('Registration Successful!!!')
         } else {
@@ -57,8 +57,11 @@ const Signup = () => {
         }
     } catch (error) { 
      setErr(error.message)
-     navigate('/signup')
-    }
+        navigate( '/signup' )
+        console.log(error)
+      }
+      
+     
   }
 
 

@@ -68,7 +68,7 @@ const MyProfile = () => {
                 <button className='logout' onClick={signOut}>LOG OUT</button>
             </div>
             <div className='bottom-bg w-100 d-flex justify-content-end flex-column align-items-center mb-0 pb-0'>
-                <div className='profile-con p-3 pb-2'>
+                <div className='profile-con p-3 pb-2 mb-4'>
                     <div className="profile-pix"><img src={data.img} alt="logo" className='w-100' /></div>
                     <h2 className='text-center'>Your Info</h2>
                     <div className="profile-details">
@@ -102,7 +102,7 @@ const MyProfile = () => {
                         </div>
                     </div>
                 </div>
-                <div className='phone-details px-3 pt-2'>
+                <div className='phone-details px-3 pt-2 mt-4'>
                     <h2 className='text-center mb-2'>Policy Info</h2>
                   
                     <table>

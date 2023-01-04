@@ -38,11 +38,14 @@ const Login = () => {
      user && fetchData()
   }, [user])
 
-  useEffect(() => {
-    if (user && data !== undefined) {
-       navigate('/homepage')
-       alert('Welcome Back!!!')
-      }
+  useEffect( () => {
+
+
+    if ( data?.phone ) {
+      navigate('/homepage')
+     alert('Welcome Back!!!')
+    }
+   
   }, [data])
 
 
@@ -58,17 +61,20 @@ const Login = () => {
         [e.target.name]: e.target.value
       })
     }
-  const loginValues = { ...login}
+  const loginValues = { ...login }
+  
+  // console.log( user.emailVerified )
+  // console.log(data)
   
    
     const loggingIn = async (e) => {
       e.preventDefault();
+
       try {
-       
         await loginIn(login.loginEmail, login.loginPass) 
-        if (data) {
+        if (data?.phone) {
           navigate('/homepage')
-          alert('Welcome Back!!!')
+          alert( 'Welcome Back!!!' )
         } else {
           navigate('/complete-profile')
           alert('Welcome, Please complete your profile to continue')
@@ -77,6 +83,8 @@ const Login = () => {
         setloginErr(error.message)
         navigate('/login')
       }
+
+
     }
 
     const forgotPass = async (e) => {

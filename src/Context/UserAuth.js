@@ -8,6 +8,7 @@ import {
     GoogleAuthProvider,
     signInWithPopup,
     sendPasswordResetEmail,
+    sendEmailVerification
 } from "firebase/auth"
 import { auth } from "../firebase-config";
 import { useEffect } from "react";
@@ -17,12 +18,22 @@ const UserAuth = createContext();
 
 export function UserAuthProvider({ children }) {
         
-    const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')) || null)
-        function register(email, password) {
-            return createUserWithEmailAndPassword( auth, email, password )
+    const [ user, setUser ] = useState( JSON.parse( localStorage.getItem( 'user' ) ) || null )
+    
+   async function register( email, password ) {
+            
+        const actionSettings = {
+            url: 'https://myinsure-9b6d0.web.app/',
+            handleCodeInApp: true
         }
+       await createUserWithEmailAndPassword( auth, email, password )
+       await sendEmailVerification(auth.currentUser, actionSettings)
+                // sendEmailVerification(auth.currentUser, actionSettings ? actionSettings  : null)
+    }
+    // auth.currentUser.emailVerified
 
-        function loginIn(email, password) {
+
+    function loginIn( email, password ) {
             return signInWithEmailAndPassword( auth, email, password )
         }
 
@@ -30,7 +41,7 @@ export function UserAuthProvider({ children }) {
             return signOut(auth);
         }
 
-        function resetPass(email) {
+    function resetPass( email ) {
             return sendPasswordResetEmail(auth, email)
         }
         async function googleSignIn() {
@@ -80,6 +91,13 @@ export function UserAuthProvider({ children }) {
             }
 
         }, [user])
+        
+
+        // sendEmailVerification(auth.currentUser)
+        //  .then(() => {
+        //     // Email verification sent!
+        //     // ...
+        // });
 
 
        return <UserAuth.Provider value={{user, register, loginIn, logOut, googleSignIn, resetPass}}>

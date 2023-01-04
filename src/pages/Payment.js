@@ -41,23 +41,19 @@ const Payment = () => {
 
     useEffect(() => {
         const fetchData2 = async () => {
-            const docRef = await doc(db, "insured", user.uid);
+            const docRef = doc(db, "insured", user.uid);
             const docSnap = await getDoc(docRef);
 
             if (docSnap.exists()) {
-                // console.log("Document data:", docSnap.data());
                 setData2(docSnap.data())
               } else {
-                // doc.data() will be undefined in this case
-                // console.log("No such document!");
                 setData2(undefined)
               }
-            // console.log(docSnap)
-            // console.log(Math.round((data2.phoneValue * 0.04) * 100) / 100)
 
-            const amnt = await Math.round((data2.phoneValue * 0.04) * 100) / 100;
-            const finalamnt = await ((amnt + 100) / (1 - 0.015)) + 0.01;
-            await setAmount(Math.round((finalamnt) * 100) / 100);
+              //calculating the total amount
+            const amnt = Math.round((data2.phoneValue * 0.04) * 100) / 100;
+            const finalamnt =  ((amnt + 100) / (1 - 0.015)) + 0.01;
+            setAmount(Math.round((finalamnt) * 100) / 100);
         }
         fetchData2()
        
